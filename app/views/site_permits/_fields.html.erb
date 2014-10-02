@@ -2,9 +2,8 @@
 
 <div class="form-group">
 	<%= f.label :site %>
-	<%= f.collection_select :site_id, Site.all, :id, :name, {include_blank: 'Select a Company', selected: (params[:site_id].blank? ? (f.object.site_id.present? ? f.object.event.id : '') : params[:site_id])}, {class: "form-control"} %>
+	<%= f.collection_select :site_id, Site.all, :id, :name, {include_blank: 'Select a Company', selected: (params[:site_id].blank? ? (f.object.site_id.present? ? f.object.site.id : '') : params[:site_id])}, {class: "form-control"} %>
 </div>
-
 
 
 <div class="form-group">
