@@ -1,7 +1,7 @@
 <%= content_for :sidebar do %>
 	<ul class="nav nav-pills nav-stacked">
 		<li><%= link_to "Edit Site", edit_site_path(site: @site) %></li>
-		<li><%= link_to "New Permit", new_site_permit_path(site: @site) %></li>
+		<li><%= link_to "New Permit", new_site_permit_path(site_id: @site) %></li>
 	</ul>
 <% end %>
 

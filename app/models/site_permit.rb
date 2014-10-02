@@ -5,7 +5,7 @@ class SitePermit < ActiveRecord::Base
 	scope :between_thirty_and_ninty, -> { where("expiration_date >= CURRENT_TIMESTAMP  + '1 month'::interval and expiration_date <= CURRENT_TIMESTAMP  + '3 month'::interval ") }
 	scope :greater_than_ninty, -> { where("expiration_date > CURRENT_TIMESTAMP  + '3 month'::interval" ) }
 
-
+  validates_presence_of :name, :expiration_date, :site_id
 
 
 def self.to_csv(options = {})

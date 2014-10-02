@@ -11,20 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002183235) do
+ActiveRecord::Schema.define(version: 20141002220928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "permits", force: true do |t|
-    t.text     "name"
-    t.text     "description"
-    t.date     "expiration_date"
-    t.text     "manager"
-    t.integer  "site_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "site_permits", force: true do |t|
     t.text     "name"
@@ -39,7 +29,7 @@ ActiveRecord::Schema.define(version: 20141002183235) do
   create_table "sites", force: true do |t|
     t.text     "name"
     t.text     "street_address"
-    t.integer  "fein_number"
+    t.text     "fein_number"
     t.date     "create_date"
     t.datetime "created_at"
     t.datetime "updated_at"
