@@ -1,5 +1,6 @@
 class SitePermitsController < ApplicationController
 	before_filter :setup_site_permit
+	before_filter :authorize
 
 	def new
 		@site_permit = SitePermit.new

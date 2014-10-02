@@ -1,5 +1,6 @@
 class SitesController < ApplicationController
 	before_filter :setup_site
+	before_filter :authorize
 	helper_method :sort_column, :sort_direction
 
 	def new

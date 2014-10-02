@@ -16,18 +16,18 @@
         <div class="navbar-header">
           <%= link_to "Mcnellies Permits", root_path, class: "navbar-brand" %>
         </div>
-        <%# if signed_in? %>
+        <%if current_user %>
           <ul class="nav navbar-nav">
             <li><%= link_to "Dashboard", root_path %></li>
             <li><%= link_to "Sites", sites_path %></li>
-            <li><%= link_to "Manage Users", root_path %></li>
+            <li><%= link_to "Add User", new_user_path %></li>
             </li>
           </ul>
           <div class="navbar-right">
-            <p class="navbar-text">Logged in as <% link_to "Benjamin_munos", root_path, class: "navbar-link" %> </p>
-            <% link_to "Log Out", root_path, class: "btn btn-default btn-sm navbar-btn" %>
+            <p class="navbar-text">Logged in as <%= current_user.email %></p>
+            <%= link_to "Log Out", logout_path, class: "btn btn-default btn-sm navbar-btn" %>
           </div>
-        <%# end %>
+        <% end %>
       </div>
     </nav>
     <div class="container-fluid">
