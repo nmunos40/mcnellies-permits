@@ -20,6 +20,7 @@ class SitePermitsController < ApplicationController
 
 	def index
 		@site_permits = SitePermit.all
+		
 	end
 
 	def update
@@ -28,6 +29,15 @@ class SitePermitsController < ApplicationController
 			redirect_to sites_path
 		else
 			render :edit
+		end
+	end
+
+	def export
+		@site_permits = SitePermit.all
+		respond_to do |format|
+			format.html
+			format.csv {send_data text: @site_permits.to_csv}
+			format.xls { send_data @site_permits.to_csv(col_sep: "\t") }
 		end
 	end
 
