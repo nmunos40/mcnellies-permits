@@ -1,0 +1,8 @@
+<%= form_for(@site, class: "form-horizontal") do |f| %>
+	<%= render 'fields', f: f %>
+	<div class="form-actions">
+		<br/>
+		<%= f.submit "Save Changes", class: "btn btn-success" %>
+		<%= link_to "Cancel", site_path(@site), class: "btn btn-link" %>
+	</div>
+<% end %>

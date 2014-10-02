@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  street_address: MyText
+  fein_number: 1
+  create_date: 2014-09-29
+
+two:
+  name: MyText
+  street_address: MyText
+  fein_number: 1
+  create_date: 2014-09-29

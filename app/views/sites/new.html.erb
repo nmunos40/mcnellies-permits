@@ -1,0 +1,7 @@
+<%= form_for @site do |f| %>
+	<%= render 'fields', f: f %>
+	<div class="form-actions">
+		<%= f.submit "Create New Site", class: "btn btn-success" %>
+		<%= link_to "Cancel", sites_path, class: "btn btn-link" %>
+	</div>
+<% end %>

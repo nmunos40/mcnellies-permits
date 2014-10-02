@@ -1,0 +1,9 @@
+<h4> New Permit </h4>
+
+<%= form_for @site_permit do |f| %>
+	<%= render 'fields', f: f %>
+	<div class="form-actions">
+		<%= f.submit "Create Permit", class: "btn btn-success" %>
+		<%= link_to "Cancel", sites_path, class: "btn btn-link" %>
+	</div>
+<% end %>

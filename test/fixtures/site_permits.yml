@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  description: MyText
+  expiration_date: 2014-09-30
+  manager: MyText
+  site_id: 1
+
+two:
+  name: MyText
+  description: MyText
+  expiration_date: 2014-09-30
+  manager: MyText
+  site_id: 1

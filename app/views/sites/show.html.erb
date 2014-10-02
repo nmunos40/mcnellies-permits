@@ -1,0 +1,32 @@
+<%= content_for :sidebar do %>
+	<ul class="nav nav-pills nav-stacked">
+		<li><%= link_to "Edit Site", edit_site_path(site: @site) %></li>
+		<li><%= link_to "New Permit", new_site_permit_path(site: @site) %></li>
+	</ul>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Site Information</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th class="text-center">FEIN Number</th>
+				<th>Street Address</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= link_to @site.name, edit_site_path(@site) %></td>
+				<td class="text-center"><%= @site.fein_number %></td>
+				<td><%=@site.street_address %>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<hr/>
+	<div class="panel panel-default">
+	  <div class="panel-heading">Permits</div>
+	  <%= render partial: 'site_permits/permits_table', locals: {permits: @site_permits} %>
+	</div>

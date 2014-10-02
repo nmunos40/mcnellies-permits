@@ -1,0 +1,33 @@
+<%= content_for :sidebar do %>
+	<ul class="nav nav-pills nav-stacked">
+		<li><%= link_to "Create New Site", new_site_path %></li>
+	</ul>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Sites</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th class="text-center">FEIN Number</th>
+<!-- 				<th>Last Permit Name</th>
+				<th>Last Permit EXP. Date </th> -->
+			</tr>
+		</thead>
+		<tbody>
+			<% if @sites.present? %>
+				<% @sites.each do |e| %>
+					<tr>
+						<td><%= link_to e.name, site_path(e) %></td>
+						<td class="text-center"><%= e.fein_number %></td>
+						<td><%# e.permit.last.name %></td>
+						<td><%# e.permit.last.expiration_date %></td>
+					</tr>
+				<% end %>
+			<% else %>
+				<tr><td colspan="3">There are currently no sites to show.</td></tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>McNellies Permits <%- if content_for?(:title) -%>&middot; <%= yield :title %><%- end -%></title>
+    <%= stylesheet_link_tag "application" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to "Mcnellies Permits", root_path, class: "navbar-brand" %>
+        </div>
+        <%# if signed_in? %>
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Dashboard", root_path %></li>
+            <li><%= link_to "Sites", sites_path %></li>
+            <li><%= link_to "Reports", root_path %></li>
+            <li><%= link_to "Manage Users", root_path %></li>
+            </li>
+          </ul>
+          <div class="navbar-right">
+            <p class="navbar-text">Logged in as <% link_to "Benjamin_munos", root_path, class: "navbar-link" %> </p>
+            <% link_to "Log Out", root_path, class: "btn btn-default btn-sm navbar-btn" %>
+          </div>
+        <%# end %>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <% if content_for?(:sidebar) %>
+          <div class="col-sm-2 sidebar">
+            <%= yield :sidebar %>
+          </div>
+        <% end %>
+        <div class="<%= content_for?(:sidebar) ? 'col-sm-10 col-sm-offset-2' : 'col-sm-12' %> main">
+          <%= render partial: 'shared/flash_messages' %>
+          <h1><%= yield :title %></h1>
+          <%= yield %>
+          <hr/>
+          <footer>
+            <p>&copy; McNellies Group <%= Time.now.year %></p>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <%= javascript_include_tag "application" %>
+    <%= yield :javascripts %>
+  </body>
+</html>

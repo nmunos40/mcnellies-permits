@@ -1,0 +1,16 @@
+<%= render partial: 'shared/errors', locals: {object: f.object} %>
+
+<div class="form-group">
+	<%= f.label :name %>
+	<%= f.text_field :name, class: "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label :street_address %>
+	<%= f.text_area :street_address, class: "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label :fein_number %>
+	<%= f.number_field :fein_number, class: "form-control" %>
+</div>

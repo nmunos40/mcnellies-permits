@@ -1,0 +1,30 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+body {
+	padding: 50px 0px;
+
+}
+
+.full-width {
+	width: 100%;
+}
+
+.vertical-middle {
+	vertical-align: middle !important;
+}
+
+.pretty th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.pretty th .asc {
+  background-image: url(assets/images/up_arrow.gif);
+}
+
+.pretty th .desc {
+  background-image: url(assets/images/down_arrow.gif);
+}
