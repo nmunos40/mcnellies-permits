@@ -1,0 +1,33 @@
+<h1>Permit Expiration Notice</h1><br/>
+
+<div class="panel panel-danger">
+  <h4>Permits Expiring in Less Than 30 Days</h4><br/>
+	<p>
+	<table class="table">
+		<thead>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Expires On</th>
+			<th>manager</th>
+			<th>Site</th>
+			</tr>
+		</thead>
+		<hr/>
+		<tbody>
+			<% if @site_permits.present? %>
+				<% @site_permits.less_than_thirty.each do |d| %>
+					<tr>
+					<td><%= d.name %></td>
+					<td><%= d.description %></td>
+					<td><%= d.expiration_date %></td>
+					<td><%= d.manager %></td>
+					<td><%= d.site.name %></td>
+					</tr>
+					<%end%>
+			<% else %>
+				<tr><td colspan="3">There are currently no permits due in the next 30 days.</td></tr>
+			<% end %>
+		</tbody>
+	</table>
+	</p>
+</div>

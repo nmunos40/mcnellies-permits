@@ -7,8 +7,9 @@ class SitePermitsController < ApplicationController
 
 	def create
 		@site_permit = SitePermit.new(site_permit_params)
+		@site_permits = SitePermit.all 
 		if @site_permit.save
-			flash[:success] = "Successfully created the Permit."				
+			flash[:success] = "Successfully created the Permit."	
 			 redirect_to sites_path
 		else
 		render :new
