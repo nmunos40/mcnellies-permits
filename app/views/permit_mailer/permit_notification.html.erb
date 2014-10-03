@@ -8,9 +8,9 @@
 			<th>Name</th>
 			<th>Description</th>
 			<th>Expires On</th>
-			<th>manager</th>
+			<th>Manager</th>
+			<th>Renewal Submitted?</th>
 			<th>Site</th>
-			</tr>
 		</thead>
 		<hr/>
 		<tbody>
@@ -21,6 +21,7 @@
 					<td><%= d.description %></td>
 					<td><%= d.expiration_date %></td>
 					<td><%= d.manager %></td>
+					<td><%= d.submitted? ? '✓' : '-' %></td>
 					<td><%= d.site.name %></td>
 					</tr>
 					<%end%>

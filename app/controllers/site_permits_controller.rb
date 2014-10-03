@@ -50,6 +50,6 @@ class SitePermitsController < ApplicationController
 		end
 
 		def site_permit_params
-			params.require(:site_permit).permit(:name, :description, :expiration_date, :manager, :site_id)
+			params.require(:site_permit).permit(:name, :description, :expiration_date, :manager, :site_id, :submitted)
 		end
 end
