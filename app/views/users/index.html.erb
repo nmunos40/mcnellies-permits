@@ -1,0 +1,31 @@
+<%= content_for :sidebar do %>
+	<ul class="nav nav-pills nav-stacked">
+		<li><%= link_to "Create New User", new_user_path %></li>
+	</ul>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">User List</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Email</th>
+				<th>Created</th>
+				<th>Last Updated</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if @users.present? %>
+				<% @users.each do |e| %>
+					<tr>
+						<td><%= e.email %></td>
+						<td><%= e.created_at %></td>
+						<td><% e.updated_at %></td>
+					</tr>
+				<% end %>
+			<% else %>
+				<tr><td>There are currently no users to show.</td></tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
