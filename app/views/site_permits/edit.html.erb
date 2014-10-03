@@ -5,6 +5,7 @@
 	<div class="form-actions">
 		<br/>
 		<%= f.submit "Save Changes", class: "btn btn-success" %>
-		<%= link_to "Cancel", sites_path, class: "btn btn-link" %>
+		<%= link_to "Cancel", sites_path, class: "btn btn-info" %>
+		<td><%= link_to 'Delete Permit', site_permit_path(@site_permit.id), method: :delete, data: {confirm: 'Are you sure you want to delete forever?' }, class: "btn btn-danger" %></td>
 	</div>
 <% end %>
