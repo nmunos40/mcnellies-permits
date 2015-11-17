@@ -1,0 +1,11 @@
+<h4> Edit Employee Options </h4>
+
+<%= form_for @site_employee, class: "form-horizontal" do |f| %>
+	<%= render 'fields', f: f %>
+	<div class="form-actions">
+		<br/>
+		<%= f.submit "Save Changes", class: "btn btn-success" %>
+		<%= link_to "Cancel", sites_path, class: "btn btn-info" %>
+		<td><%= link_to 'Delete Employee', site_employee_path(@site_employee.id), method: :delete, data: {confirm: 'Are you sure you want to delete forever?' }, class: "btn btn-danger" %></td>
+	</div>
+<% end %>

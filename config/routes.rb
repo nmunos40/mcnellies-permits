@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :site_permits
+  resources :site_employees
   resources :sites
   resource :sessions
 

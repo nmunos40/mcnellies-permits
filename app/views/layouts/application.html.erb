@@ -18,8 +18,9 @@
         </div>
         <%if current_user %>
           <ul class="nav navbar-nav">
-            <li><%= link_to "Dashboard", root_path %></li>
-            <li><%= link_to "Sites", sites_path %></li>
+            <li><%= link_to "Permit Dashboard", root_path %></li>
+            <li><%= link_to "Employee Dashboard", site_employees_path %></li>
+            <li><%= link_to "Manage Sites", sites_path %></li>
             <li><%= link_to "Manage Users", users_path %></li>
             </li>
           </ul>
@@ -43,7 +44,7 @@
           <%= yield %>
           <hr/>
           <footer>
-            <p>&copy; McNellies Group <%= Time.now.year %></p>
+            <p>&copy; Benjamin C. Munos <%= Time.now.year %></p>
           </footer>
         </div>
       </div>

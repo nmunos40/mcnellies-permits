@@ -1,6 +1,5 @@
 == README
 
-MCPermits is an application to keep track of permits that expire in different incruments. It has email notification for anything that is expiring in 30 days where the renewal request has not been submitted. 
 
 Things to know
 ===============

@@ -1,0 +1,27 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th><%= sortable "Name" %></th>
+			<th><%= sortable "description"%></th>
+			<th><%= sortable "expiration_date", "Expires On" %></th>
+			<th class="text-center" ><%= sortable "submitted", "Renewal Submitted?" %></th>
+			<th>Site</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% if employees.present? %>
+			<% employees.each do |d| %>
+				<tr>
+					<td><%= link_to d.name, edit_site_permit_path(d) %></td>
+					<td><%= d.description %></td>
+					<td><%= d.expiration_date.strftime("%m/%d/%Y") %></td>
+					<td class="text-center"><%= d.submitted? ? '✓' : '-' %></td>
+					<td><%= link_to d.site.name, site_path(d.site_id) %></td>
+				</tr>
+			<% end %>
+		<% else %>
+			<tr><td colspan="3">No employees to show.</td></tr>
+		<% end %>
+	</tbody>
+</table>
+

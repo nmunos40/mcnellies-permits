@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyText
+  last_name: MyText
+  contract_number: MyText
+  premium: 9.99
+  salaried?: false
+  insurance_type: MyText
+  coverage_type: MyText
+  tipped?: false
+
+two:
+  first_name: MyText
+  last_name: MyText
+  contract_number: MyText
+  premium: 9.99
+  salaried?: false
+  insurance_type: MyText
+  coverage_type: MyText
+  tipped?: false

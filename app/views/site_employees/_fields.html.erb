@@ -1,0 +1,66 @@
+<%= render partial: 'shared/errors', locals: {object: f.object} %>
+
+<div class="form-group">
+	<%= f.label :site %>
+	<%= f.collection_select :site_id, Site.all, :id, :name, {include_blank: 'Select a Company', selected: (params[:site_id].blank? ? (f.object.site_id.present? ? f.object.site.id : '') : params[:site_id])}, {class: "form-control"} %>
+</div>
+
+
+<div class="form-group">
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name, class: "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label :last_name %>
+	<%= f.text_field :last_name, class: "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label :contract_number %>
+	<%= f.text_field :contract_number, class: "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label :insurance_type %>
+	<%= f.text_field :insurance_type, class: "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label :coverage_type %>
+	<%= f.text_field :coverage_type, class: "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label :premium %>
+	<%= f.text_field :premium, class: "form-control", :step => 'any'%>
+</div>
+
+<div class="checkbox">
+	<label><%= f.check_box :salaried? %>salaried?</label>
+</div>
+
+<div class="checkbox">
+	<label><%= f.check_box :tipped? %>Do they Make Tips?</label>
+</div>
+
+<div class="checkbox">
+	<label><%= f.check_box :employed? %>Still Employeed?</label>
+</div>
+
+<div class="form-group">
+	<%= f.label :ADP_Deduction %>
+	<%= f.text_field :ADP_Deduction, class: "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label :deduction_amount %>
+	<%= f.text_field :deduction_amount, class: "form-control", :step => 'any'%>
+</div>
+
+<div class="form-group">
+	<%= f.label :collection_type %>
+	<%= f.text_field :collection_type, class: "form-control" %>
+</div>
+
+<br/>

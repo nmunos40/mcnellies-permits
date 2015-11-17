@@ -1,0 +1,35 @@
+<%= content_for :sidebar do %>
+	<ul class="nav nav-pills nav-stacked">
+		<li><%= link_to "Add new Employee", new_site_employee_path %></li>
+	</ul>
+<% end %>
+
+<div class="panel panel-danger">
+  <div class="panel-heading"><strong>Employees Still needing to pay</strong></div>
+	<table class="table">
+		<thead>
+			<th>Employee Name</th>
+			<th>Description</th>
+			<th>Expires On</th>
+			<th class="text-center">Renewal Submitted?</th>
+			<th>Site</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if @site_employees.present? %>
+				<% @site_employees.each do |e| %>
+					<tr>
+					<td><%= link_to e.first_name, edit_site_employee_path(e) %></td>
+					<td><%= e.contract_number %></td>
+					<td class="text-center"><%= e.salaried? ? '✓' : '-' %></td>
+					<td><%= link_to e.site.name, site_path(e.site_id) %></td>
+					</tr>
+					<%end%>
+			<% else %>
+				<tr><td colspan="3">There are currently no permits due in the next 30 days.</td></tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<hr/>
