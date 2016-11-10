@@ -1,11 +1,11 @@
 # Mcnellies Permit Application
 
 
-| Release       | Developer     | Release Date  |
-| ------------- |:-------------:| -------------:|
-| 1.0 - Initial | BCM           |               |
-| 1.1 -In Proc  | BCM           |               |
-|               |               |               |
+| Release                       | Developer     | Release Date  |
+| ------------------------------|:-------------:| -------------:|
+| 1.0 - Initial Release         |      BCM      |               |
+| 1.1 - Development in process  |      BCM      |               |
+|                               |               |               |
 
 
 ### Overview 
