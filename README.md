@@ -5,7 +5,7 @@
 | ------------- |:-------------:| -------------:|
 | 1.0 - Initial | BCM           |               |
 | 1.1 -In Proc  | BCM           |               |
-| zebra stripes | BCM           |               |
+|               |               |               |
 
 
 ### Overview 
