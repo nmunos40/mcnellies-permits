@@ -7,4 +7,10 @@ module ApplicationHelper
 	  link_to title, {:sort => column, :direction => direction}, {:class => css_class}
 	end
 
+	def logo_url
+    	Tenant.current.logo
+	end
+
+
 end
+	

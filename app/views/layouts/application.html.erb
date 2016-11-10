@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>McNellies Permits <%- if content_for?(:title) -%>&middot; <%= yield :title %><%- end -%></title>
+    <title>McApps <%- if content_for?(:title) -%>&middot; <%= yield :title %><%- end -%></title>
     <%= stylesheet_link_tag "application" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
@@ -11,10 +11,12 @@
   </head>
   <body>
 
+    <body style = "background-image:url('<%= logo_url %>'); background-size:cover">
+
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <%= link_to "Mcnellies Permits", root_path, class: "navbar-brand" %>
+          <%= link_to "McApps", root_path, class: "navbar-brand" %>
         </div>
         <%if current_user %>
           <ul class="nav navbar-nav">
@@ -44,7 +46,7 @@
           <%= yield %>
           <hr/>
           <footer>
-            <p>&copy; Benjamin C. Munos <%= Time.now.year %></p>
+            <p>&copy; McNellies Group <%= Time.now.year %></p>
           </footer>
         </div>
       </div>

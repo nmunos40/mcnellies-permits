@@ -1,11 +1,28 @@
-== README
+== MCAPPS
 
 
-Things to know
+Overview 
 ===============
+
+This is an applciation built to track manual business tasks for a company with multiple sites. More Specifically this applciaiton will track permits and insurance payments for multiple sites.
+
+
+Release Notes
+===============
+
+Release notes - V 1.1
+1) Renaming the application to MCApps from McPermits to account for additional functionality. 
+2) Adding new navigation to support Insurance Payments
+3) Fixing application to allow mobile view
+4) Adding Recover Password function
+5) Adding Emp. MVC
+6) Fixing issue preventing email notifications
+7)
+
+
+Release Notes - V 1.0
 1) Emails are currently hard coded. (Eventually will come from the user list)
 2) Permits are the only records that can be deleted. (I want to manage deleting of sites and users manually)
 3) The application runs on Rails 4 and Ruby 2.1.1
 4) Currently the server is still the bric core server. The load is not enough to change at present time.
 5) The app is built on bootstrap but the left hand navigation prevents the app from beeing completley mobile compatible.
-6) Questions about the app? Email Benjamin-munos@utulsa.edu
