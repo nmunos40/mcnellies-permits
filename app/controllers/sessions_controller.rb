@@ -1,7 +1,16 @@
-class SessionsController < ApplicationController
+class SessionsController < ApplicationController	
+	before_filter :nav_show
+	before_filter :bodycss
 	
-  def new
-  end
+ 	def new
+	end
+
+	def bodycss
+		@body_id = "loginPage"
+	end
+  	def nav_show
+  	@disable_nav = true
+	end
 
 	def create
 	  user = User.find_by_email(params[:email])

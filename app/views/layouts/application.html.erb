@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>McApps <%- if content_for?(:title) -%>&middot; <%= yield :title %><%- end -%></title>
+    <title><%= Tenant.current.name%> <%- if content_for?(:title) -%>&middot; <%= yield :title %><%- end -%></title>
+    <% unless @disable_nav %>
     <%= stylesheet_link_tag "application" %>
+    <% else %>
+    <%= stylesheet_link_tag "login" %>
+    <% end %>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
   </head>
-  <body>
-
-    <body style = "background-image:url('<%= logo_url %>'); background-size:cover">
-
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <%= link_to "McApps", root_path, class: "navbar-brand" %>
-        </div>
-        <%if current_user %>
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Permit Dashboard", root_path %></li>
-            <li><%= link_to "Employee Dashboard", site_employees_path %></li>
-            <li><%= link_to "Manage Sites", sites_path %></li>
-            <li><%= link_to "Manage Users", users_path %></li>
-            </li>
-          </ul>
-          <div class="navbar-right">
-            <p class="navbar-text">Logged in as <%= current_user.email %></p>
-            <%= link_to "Log Out", logout_path, class: "btn btn-default btn-sm navbar-btn" %>
+  <body <%= "id=#{@body_id}" if @body_id %> > 
+    <% unless @disable_nav %>
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <%= link_to Tenant.current.name, root_path, class: "navbar-brand" %>
           </div>
-        <% end %>
-      </div>
-    </nav>
+          <%if current_user %>
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Permit Dashboard", root_path %></li>
+              <li><%= link_to "Employee Dashboard", site_employees_path %></li>
+              <li><%= link_to "Manage Sites", sites_path %></li>
+              <li><%= link_to "Manage Users", users_path %></li>
+              </li>
+            </ul>
+            <div class="navbar-right">
+              <p class="navbar-text">Logged in as <%= current_user.email %></p>
+              <%= link_to "Log Out", logout_path, class: "btn btn-default btn-sm navbar-btn" %>
+            </div>
+          <% end %>
+        </div>
+      </nav>
+    <% end %>
     <div class="container-fluid">
       <div class="row">
         <% if content_for?(:sidebar) %>
@@ -44,10 +45,12 @@
           <%= render partial: 'shared/flash_messages' %>
           <h1><%= yield :title %></h1>
           <%= yield %>
-          <hr/>
-          <footer>
-            <p>&copy; McNellies Group <%= Time.now.year %></p>
-          </footer>
+          <% unless @disable_nav %>
+             <hr/>
+            <footer>
+              <p>&copy; Munos.INC <%= Time.now.year %></p>
+            </footer>
+          <% end %>
         </div>
       </div>
     </div>
