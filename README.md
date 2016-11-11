@@ -1,7 +1,18 @@
-== MCAPPS
+# Mcnellies Permit Application
 
 
+<<<<<<< HEAD:README.rdoc
 === Overview 
+=======
+| Release                       | Developer     | Release Date  |
+| ------------------------------|:-------------:| -------------:|
+| 1.0 - Initial Release         |      BCM      |               |
+| 1.1 - Development in process  |      BCM      |               |
+|                               |               |               |
+
+
+### Overview 
+>>>>>>> dd5184c6f5198792644d64ebcbc2a73b43126911:README.md
 ===============
 
 This is an applciation built to track manual business tasks for a company with multiple sites. More Specifically this applciaiton will track permits and insurance payments for multiple sites.
