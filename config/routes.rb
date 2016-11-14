@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  
+
   resources :users
   resources :site_permits
   resources :site_employees
   resources :sites
   resource :sessions
+  resource :password_reset
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'

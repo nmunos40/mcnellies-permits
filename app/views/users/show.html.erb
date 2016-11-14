@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Profile Information</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th class="text-center">First Name</th>
+				<th class="text-center">Last Name</th>
+				<th class="text-center">Email Address</th>
+				<th class="text-center"> Account Create Date </th>
+				<th class="text-center"> Account Update Date </th>
+				<th class="text-center"> Is admin?</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="text-center"><%= @user.first_name %></td>
+				<td class="text-center"><%= @user.last_name %></td>
+				<td class="text-center"><%= @user.email %></td>
+				<td class="text-center"><%= @user.created_at.strftime("%m/%d/%Y") %></td>
+				<td class="text-center"><%= @user.updated_at.strftime("%m/%d/%Y") %></td>
+				<td class="text-center"><%= @user.admin ? '✓' : '-' %></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="well well-lg">
+
+	<div class="btn-group btn-group-justified" role="group" aria-label="...">
+	  <div class="btn-group" role="group">
+	  	<%= link_to "Create New User", new_user_path , class: "btn btn-default btn-primary" %>
+	  </div>
+	  <div class="btn-group" role="group">
+	  	<%= link_to "Edit Profile", edit_user_path, class: "btn btn-default btn-warning" %>
+	  </div>
+	  <div class="btn-group" role="group">
+	  	<%= link_to "Log Out", logout_path, class: "btn btn-default btn-danger" %>
+	  </div>
+	</div>
+
+</div>
+

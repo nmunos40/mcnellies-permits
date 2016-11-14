@@ -42,15 +42,18 @@ Rails.application.configure do
   #   :user_name => "postmaster@app30269925.mailgun.org",
   #   :password => "7c8444bccf435fa1ba2b80481dcaef91"
   # }
+config.action_mailer.default_url_options = { :host => "localhost:3000" }  
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
-  :address              => "smtp.gmail.com",
-  :port                 => 587,
-  :domain               => 'mcpermits.info',
-  :user_name            => 'admin',
-  :password             => 'letmein',
-  :authentication       => 'plain',
-  :enable_starttls_auto => true  }
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'gmail.com',
+  user_name:            'benmunos@gmail.com',
+  password:             'Benjo88!',
+  authentication:       'plain'
+  # enable_starttls_auto: true
+  # ^ ^ remove this option ^ ^
+}
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
