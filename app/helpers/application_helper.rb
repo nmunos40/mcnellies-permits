@@ -14,3 +14,10 @@ module ApplicationHelper
 
 end
 	
+
+# Keep for report export
+	# 	<ul class="nav nav-pills nav-stacked">
+	# 	<li><%= link_to "Create New Permit", new_site_permit_path %></li>
+	# 	<li><%= link_to "Export List to Excel", export_path(format: "xls")%></li>	
+	# 	<li><%= link_to "Export List to CSV", export_path(format: "csv")%></li> 
+	# </ul>

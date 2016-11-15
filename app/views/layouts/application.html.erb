@@ -36,11 +36,21 @@
     <div class="container-fluid">
       <div class="row">
         <% if content_for?(:sidebar) %>
-          <div class="col-sm-2 sidebar">
-            <%= yield :sidebar %>
-          </div>
+          <div class="area"></div><nav class="main-menu">
+            <ul>
+
+                <%= yield :sidebar %>
+                <!--Page specific A tags go here. example:
+                <a href="#">
+                  <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                            Dashboard
+                    </span>
+                </a> -->
+            </ul>
+        </nav>
         <% end %>
-        <div class="<%= content_for?(:sidebar) ? 'col-sm-10 col-sm-offset-2' : 'col-sm-12' %> main">
+        <div class="<%= content_for?(:sidebar) ? 'col-sm-10 col-sm-offset-1' : 'col-sm-12' %> main">
           <%= render partial: 'shared/flash_messages' %>
           <h1><%= yield :title %></h1>
           <%= yield %>

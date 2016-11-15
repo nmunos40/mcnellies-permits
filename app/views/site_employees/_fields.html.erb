@@ -17,23 +17,18 @@
 </div>
 
 <div class="form-group">
-	<%= f.label :contract_number %>
-	<%= f.text_field :contract_number, class: "form-control" %>
+	<%= f.label :employee_ID %>
+	<%= f.text_field :employee_ID, class: "form-control" %>
 </div>
 
 <div class="form-group">
-	<%= f.label :insurance_type %>
-	<%= f.text_field :insurance_type, class: "form-control" %>
+	<%= f.label :phone_number %>
+	<%= f.text_field :phone_number, class: "form-control" %>
 </div>
 
 <div class="form-group">
-	<%= f.label :coverage_type %>
-	<%= f.text_field :coverage_type, class: "form-control" %>
-</div>
-
-<div class="form-group">
-	<%= f.label :premium %>
-	<%= f.text_field :premium, class: "form-control", :step => 'any'%>
+	<%= f.label :email_address %>
+	<%= f.text_field :email_address, class: "form-control" %>
 </div>
 
 <div class="checkbox">
@@ -41,26 +36,18 @@
 </div>
 
 <div class="checkbox">
-	<label><%= f.check_box :tipped? %>Do they Make Tips?</label>
-</div>
-
-<div class="checkbox">
-	<label><%= f.check_box :employed? %>Still Employeed?</label>
+	<label><%= f.check_box :employed? %>Still Employed?</label>
 </div>
 
 <div class="form-group">
-	<%= f.label :ADP_Deduction %>
-	<%= f.text_field :ADP_Deduction, class: "form-control" %>
+	<%= f.label :date_hired %>
+	<%= f.text_field :date_hired, class: "form-control" %>
 </div>
 
 <div class="form-group">
-	<%= f.label :deduction_amount %>
-	<%= f.text_field :deduction_amount, class: "form-control", :step => 'any'%>
+	<%= f.label :date_fired %>
+	<%= f.text_field :date_fired, class: "form-control" %>
 </div>
 
-<div class="form-group">
-	<%= f.label :collection_type %>
-	<%= f.text_field :collection_type, class: "form-control" %>
-</div>
 
 <br/>

@@ -1,7 +1,13 @@
 <%= content_for :sidebar do %>
-	<ul class="nav nav-pills nav-stacked">
-		<li><%= link_to "Create New Site", new_site_path %></li>
-	</ul>
+    <li>
+		<%= link_to new_site_path do %>
+	  		<i class="fa fa-plus-circle fa-2x"></i>
+		    	<span class="nav-text">
+		            Create New Site
+		    	</span>
+		<% end %>
+	</li>
+
 <% end %>
 
 <div class="panel panel-default">

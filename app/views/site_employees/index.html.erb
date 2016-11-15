@@ -5,13 +5,14 @@
 <% end %>
 
 <div class="panel panel-danger">
-  <div class="panel-heading"><strong>Employees Still needing to pay</strong></div>
+  <div class="panel-heading"><strong>Employee List</strong></div>
 	<table class="table">
 		<thead>
 			<th>Employee Name</th>
-			<th>Description</th>
-			<th>Expires On</th>
-			<th class="text-center">Renewal Submitted?</th>
+			<th>Employee ID</th>
+			<th>Email Address</th>
+			<th>salaried?</th>
+			<th>Employed?</th>
 			<th>Site</th>
 			</tr>
 		</thead>
@@ -20,13 +21,16 @@
 				<% @site_employees.each do |e| %>
 					<tr>
 					<td><%= link_to e.first_name, edit_site_employee_path(e) %></td>
-					<td><%= e.contract_number %></td>
+					<td><%= e.employee_ID %></td>
+					<td><%= e.phone_number %></td>
+					<td><%= e.email_address %></td>
 					<td class="text-center"><%= e.salaried? ? '✓' : '-' %></td>
+					<td class="text-center"><%= e.employed? ? '✓' : '-' %></td>
 					<td><%= link_to e.site.name, site_path(e.site_id) %></td>
 					</tr>
 					<%end%>
 			<% else %>
-				<tr><td colspan="3">There are currently no permits due in the next 30 days.</td></tr>
+				<tr><td colspan="3">Where are all of the Employees?</td></tr>
 			<% end %>
 		</tbody>
 	</table>

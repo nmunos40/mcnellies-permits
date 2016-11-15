@@ -30,3 +30,4 @@ gem 'spring',        group: :development
 
 gem 'apartment'                     # Multitenant support
 gem 'hirb'                          # Better DB output in IRB
+gem 'font-awesome-sass'

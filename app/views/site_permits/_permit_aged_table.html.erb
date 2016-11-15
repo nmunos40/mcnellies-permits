@@ -1,0 +1,90 @@
+<div class="panel panel-danger">
+  <div class="panel-heading"><strong>Permits Expiring in Less Than 30 Days</strong></div>
+	<table class="table">
+		<thead>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Expires On</th>
+			<th class="text-center">Renewal Submitted?</th>
+			<th>Site</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if @site_permits.present? %>
+				<% @site_permits.less_than_thirty.each do |d| %>
+					<tr>
+					<td><%= link_to d.name, edit_site_permit_path(d) %></td>
+					<td><%= d.description %></td>
+					<td><%= d.expiration_date.strftime("%m/%d/%Y")%></td>
+					<td class="text-center"><%= d.submitted? ? '✓' : '-' %></td>
+					<td><%= link_to d.site.name, site_path(d.site_id) %></td>
+					</tr>
+					<%end%>
+			<% else %>
+				<tr><td colspan="3">There are currently no permits due in the next 30 days.</td></tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<hr/>
+
+<div class="panel panel-warning">
+  <div class="panel-heading"><strong>Permits Expiring in 30-90 Days</strong></div>
+	<table class="table">
+		<thead>
+			<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Expires On</th>
+			<th class="text-center">Renewal Submitted?</th>
+			<th>Site</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if @site_permits.present? %>
+				<%  @site_permits.between_thirty_and_ninty.each do |d| %>
+					<tr>
+					<td><%= link_to d.name, edit_site_permit_path(d) %></td>
+					<td><%= d.description %></td>
+					<td><%= d.expiration_date.strftime("%m/%d/%Y") %></td>
+					<td class="text-center"><%= d.submitted? ? '✓' : '-' %></td>
+					<td><%= link_to d.site.name, site_path(d.site_id) %></td>
+					</tr>
+				<% end %>
+			<% else %>
+				<tr><td colspan="3">There are currently no permits due in the next 30-90 days.</td></tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<div class="panel panel-success">
+  <div class="panel-heading"><strong>Permits Expiring in Greater than 90 Days</strong></div>
+	<table class="table">
+		<thead>
+			<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Expires On</th>
+			<th class="text-center">Renewal Submitted?</th>
+			<th>Site</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if @site_permits.present? %>
+				<%  @site_permits.greater_than_ninty.each do |d| %>
+					<tr>
+					<td><%= link_to d.name, edit_site_permit_path(d) %></td>
+					<td><%= d.description %></td>
+					<td><%= d.expiration_date.strftime("%m/%d/%Y") %></td>
+					<td class="text-center"><%= d.submitted? ? '✓' : '-' %></td>
+					<td><%= link_to d.site.name, site_path(d.site_id) %></td>
+					</tr>
+				<% end %>
+			<% else %>
+				<tr><td colspan="3">We are in deep trouble.</td></tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

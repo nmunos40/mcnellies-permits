@@ -29,16 +29,12 @@ ActiveRecord::Schema.define(version: 20161114022617) do
   create_table "site_employees", force: true do |t|
     t.text     "first_name"
     t.text     "last_name"
-    t.text     "contract_number"
-    t.decimal  "premium",          precision: 30, scale: 10
+    t.text     "employee_ID"
+    t.text     "phone_number"
+    t.text     "email_address"
     t.boolean  "salaried?"
-    t.text     "insurance_type"
-    t.text     "coverage_type"
-    t.boolean  "tipped?"
-    t.boolean  "ADP_Deduction"
-    t.decimal  "deduction_amount", precision: 30, scale: 10
-    t.text     "collection_type"
-    t.date     "create_date"
+    t.date     "date_hired"
+    t.date     "date_fired"
     t.boolean  "employed?"
     t.integer  "site_id"
     t.datetime "created_at"
