@@ -24,7 +24,11 @@
 
 <% end %>
 
-<h1><%= link_to @site.name, edit_site_path(@site) %></h1>
+<div class="bs-callout bs-callout-success">
+  <h4><%=link_to @site.name, edit_site_path(@site) %></h2>
+    <strong>FEIN:</strong><span> <%=@site.fein_number%></span><br/>
+  <strong>Address:</strong><span> <%=@site.street_address%></span>  
+</div>
 
 <hr/>
 

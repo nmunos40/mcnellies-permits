@@ -1,0 +1,33 @@
+<%= form_for(@employee_license) do |f| %>
+  <% if @employee_license.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee_license.errors.count, "error") %> prohibited this employee_license from being saved:</h2>
+
+      <ul>
+      <% @employee_license.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :employee_id %><br>
+    <%= f.text_field :employee_id %>
+  </div>
+  <div class="field">
+    <%= f.label :license_id %><br>
+    <%= f.text_field :license_id %>
+  </div>
+  <div class="field">
+    <%= f.label :expiration_date %><br>
+    <%= f.datetime_select :expiration_date %>
+  </div>
+  <div class="field">
+    <%= f.label :obtained? %><br>
+    <%= f.check_box :obtained? %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

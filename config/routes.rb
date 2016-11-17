@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   
 
+  resources :employee_licenses
+
   resources :trainings
 
   resources :licenses

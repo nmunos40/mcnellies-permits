@@ -1,0 +1,2 @@
+module EmployeeLicensesHelper
+end

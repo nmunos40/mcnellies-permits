@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @employee_license.employee %>
+</p>
+
+<p>
+  <strong>License:</strong>
+  <%= @employee_license.license %>
+</p>
+
+<p>
+  <strong>Expiration date:</strong>
+  <%= @employee_license.expiration_date %>
+</p>
+
+<p>
+  <strong>Obtained?:</strong>
+  <%= @employee_license.obtained? %>
+</p>
+
+<%= link_to 'Edit', edit_employee_license_path(@employee_license) %> |
+<%= link_to 'Back', employee_licenses_path %>

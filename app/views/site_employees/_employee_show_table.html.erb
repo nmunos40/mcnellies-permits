@@ -1,0 +1,59 @@
+<% if @siteemp.present? %>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<ul class="list-data">
+				<li>
+					<div class="row">
+						<strong class="col-xs-12 col-md-4">First Name</strong> 
+						<span class="col-xs-12 col-md-8"><%=@siteemp.first_name%></span>
+					</div>
+				</li>
+				<li>
+					<div class="row">
+						<strong class="col-xs-12 col-md-4">Last Name</strong> 
+						<span class="col-xs-12 col-md-8"><%=@siteemp.last_name%></span>
+					</div>
+				</li>	
+				<li>
+					<div class="row">
+						<strong class="col-xs-12 col-md-4">Employee ID</strong> 
+						<span class="col-xs-12 col-md-8"><%=@siteemp.employee_ID%></span>
+					</div>
+				</li>		
+				<li>
+					<div class="row">
+						<strong class="col-xs-12 col-md-4">Phone Number</strong> 
+						<span class="col-xs-12 col-md-8"><%=@siteemp.phone_number%></span>
+					</div>
+				</li>	
+				<li>
+					<div class="row">
+						<strong class="col-xs-12 col-md-4">Email Address</strong> 
+						<span class="col-xs-12 col-md-8"><%=@siteemp.email_address%></span>
+					</div>
+				</li>	
+				<li>
+					<div class="row">
+						<strong class="col-xs-12 col-md-4">Salaried?</strong> 
+						<span class="col-xs-12 col-md-8"><%=@siteemp.salaried?%></span>
+					</div>
+				</li>	
+				<li>
+					<div class="row">
+						<strong class="col-xs-12 col-md-4">Still Employed?</strong> 
+						<span class="col-xs-12 col-md-8"><%=@siteemp.employed?%></span>
+					</div>
+				</li>	
+				<li>
+					<div class="row">
+						<strong class="col-xs-12 col-md-4">Date Fired</strong> 
+						<span class="col-xs-12 col-md-8"><%=@siteemp.date_fired%></span>
+					</div>
+				</li>	
+			</ul>	
+		</div>
+	</div>
+<% else %>
+	<tr><td colspan="3">We cant find the Employee?</td></tr>
+<% end %>

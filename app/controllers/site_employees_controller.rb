@@ -17,13 +17,17 @@ class SiteEmployeesController < ApplicationController
 		end
 	end
 
+	def show
+		@siteemp = SiteEmployee.find(params[:id]) if params[:id]
+	end
+
 	def edit
 	end
 
 	def destroy
 		@site_employee.destroy
 		flash[:success] = "The Employee has been successfully removed."	
-		redirect_to root_path
+		redirect_to site_employees_path
   	end
 
 	def index
@@ -34,7 +38,7 @@ class SiteEmployeesController < ApplicationController
 	def update
 		if @site_employee.update_attributes(site_employee_params)
 			flash[:success] = "Employee updated successfully."
-			redirect_to sites_path
+			redirect_to site_employees_path
 		else
 			render :edit
 		end
@@ -47,11 +51,9 @@ class SiteEmployeesController < ApplicationController
 		end
 
 		def site_employee_params
-			params.require(:site_employee).permit(:first_name, :last_name, :contract_number, :premium, :salaried?, :insurance_type, :coverage_type, :tipped?, :ADP_Deduction, :deduction_amount, :collection_type, :create_date, :employed?, :site_id)
+			params.require(:site_employee).permit(:site_id, :first_name, :last_name, :employee_ID, :phone_number, :email_address, :salaried?, :date_hired, :date_fired, :employed?, :site_id )
 		end
 end
-
-
 
 
 
