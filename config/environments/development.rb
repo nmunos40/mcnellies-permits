@@ -49,7 +49,7 @@ config.action_mailer.smtp_settings = {
   port:                 587,
   domain:               'gmail.com',
   user_name:            'benmunos@gmail.com',
-  password:             'Benjo88!',
+  password:             'letmein',
   authentication:       'plain'
   # enable_starttls_auto: true
   # ^ ^ remove this option ^ ^
