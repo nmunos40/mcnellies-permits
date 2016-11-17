@@ -1,27 +1,30 @@
-<table class="table">
-	<thead>
-		<tr>
-			<th><%= sortable "Name" %></th>
-			<th><%= sortable "description"%></th>
-			<th><%= sortable "expiration_date", "Expires On" %></th>
-			<th class="text-center" ><%= sortable "submitted", "Renewal Submitted?" %></th>
-			<th>Site</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% if employees.present? %>
-			<% employees.each do |d| %>
-				<tr>
-					<td><%= link_to d.name, edit_site_permit_path(d) %></td>
-					<td><%= d.description %></td>
-					<td><%= d.expiration_date.strftime("%m/%d/%Y") %></td>
-					<td class="text-center"><%= d.submitted? ? '✓' : '-' %></td>
-					<td><%= link_to d.site.name, site_path(d.site_id) %></td>
-				</tr>
+<div class="panel panel-info">
+  <div class="panel-heading"><strong>Employee List</strong></div>
+	<table class="table">
+		<thead>
+			<th class="text-center">Employee Name</th>
+			<th class="text-center">Employee ID</th>
+			<th class="text-center">Email Address</th>
+			<th class="text-center">salaried?</th>
+			<th class="text-center">Employed?</th>
+			<th class="text-center">Site</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if @site_employees.present? %>
+				<% @site_employees.each do |e| %>
+					<tr>
+					<td class="text-center"><%= link_to e.to_s, site_employee_path(e) %></td>
+					<td class="text-center"><%= e.employee_ID %></td>
+					<td class="text-center"><%= e.email_address %></td >
+					<td class="text-center"><%= e.salaried? ? '✓' : '-' %></td>
+					<td class="text-center"><%= e.employed? ? '✓' : '-' %></td>
+					<td class="text-center"><%= link_to e.site.name, site_path(e.site_id) %></td>
+					</tr>
+					<%end%>
+			<% else %>
+				<tr><td colspan="3">Where are all of the Employees?</td></tr>
 			<% end %>
-		<% else %>
-			<tr><td colspan="3">No employees to show.</td></tr>
-		<% end %>
-	</tbody>
-</table>
-
+		</tbody>
+	</table>
+</div>

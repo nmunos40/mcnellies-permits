@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
 	
  	def new
 	end
-
 	def bodycss
 		@body_id = "loginPage"
 	end
+
   	def nav_show
   	@disable_nav = true
 	end

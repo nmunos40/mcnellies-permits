@@ -1,21 +1,27 @@
 <%= content_for :sidebar do %>
-    <li>
-    <%= link_to new_site_permit_path(site_id: @site) do %>
-        <i class="fa fa-plus-circle fa-2x"></i>
-          <span class="nav-text">
-                 Create New Permit
-          </span>
+
+  <li>
+    <%= link_to edit_site_path(site: @site) do %>
+        <i class="fa fa-pencil-square-o fa-2x"></i>
+          <span class="nav-text">Edit Site</span>
     <% end %>
   </li>
 
     <li>
-    <%= link_to edit_site_path(site: @site) do %>
-        <i class="fa fa-pencil-square-o fa-2x"></i>
-          <span class="nav-text">
-                Edit Site
-          </span>
+    <%= link_to new_site_permit_path(site_id: @site) do %>
+        <i class="fa fa-plus-circle fa-2x"></i>
+          <span class="nav-text">Create New Permit</span>
     <% end %>
   </li>
+
+  <li>
+    <%= link_to new_site_employee_path do %>
+          <i class="fa fa fa-user-plus fa-2x"></i>
+            <span class="nav-text">Add new Employee</span>
+      <% end %>
+  </li>
+
+
 <% end %>
 
 <h1><%= link_to @site.name, edit_site_path(@site) %></h1>
@@ -24,20 +30,25 @@
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#site" aria-controls="site" role="tab" data-toggle="tab">Site Permits</a></li>
-    <li role="presentation"><a href="#emplisc" aria-controls="emplisc" role="tab" data-toggle="tab">Employee Licenses</a></li>
-    <li role="presentation"><a href="#emplearn" aria-controls="emplearn" role="tab" data-toggle="tab">Employee Learning</a></li>
+    <li role="presentation" class="active"><a href="#employee" aria-controls="employee" role="tab" data-toggle="tab">Employees</a></li>
+    <li role="presentation"><a href="#permit" aria-controls="permit" role="tab" data-toggle="tab">Managers</a></li>
+    <li role="presentation"><a href="#permit" aria-controls="permit" role="tab" data-toggle="tab">Permits</a></li>
+    <li role="presentation"><a href="#emplisc" aria-controls="emplisc" role="tab" data-toggle="tab">Licenses</a></li>
+    <li role="presentation"><a href="#emplearn" aria-controls="emplearn" role="tab" data-toggle="tab">Learning</a></li>
   </ul>
 
 <!-- Nav Content -->
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane fade in active" id="site">
-    <h3>Site Specific Permits</h3>
-    <hr/>
-  	<%= render partial: 'site_permits/permit_aged_table', locals: {permits: @site_permits} %>
+  <div role="tabpanel" class="tab-pane fade in active" id="employee">
+      <hr/>
+    <%= render partial: 'site_employees/employees_table', locals: {permits: @site_employees} %>
   </div>
   <div role="tabpanel" class="tab-pane fade" id="emplisc">...</div>
   <div role="tabpanel" class="tab-pane fade" id="emplearn">...</div>
+  <div role="tabpanel" class="tab-pane fade" id="permit">
+    <hr/>
+    <%= render partial: 'site_permits/permit_aged_table', locals: {permits: @site_permits} %>
+  </div>
 </div>
 
 

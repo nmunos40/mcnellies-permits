@@ -10,6 +10,7 @@ class SitesController < ApplicationController
 	def show
 		@site = Site.find(params[:id]) if params[:id]
 		@site_permits = @site.site_permits.order(sort_column + " " + sort_direction)
+		@site_employees = @site.site_employees
 	end
 
 	def index

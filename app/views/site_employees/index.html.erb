@@ -1,39 +1,26 @@
 <%= content_for :sidebar do %>
-	<ul class="nav nav-pills nav-stacked">
-		<li><%= link_to "Add new Employee", new_site_employee_path %></li>
-	</ul>
+	<li>
+		<%= link_to new_site_employee_path do %>
+	        <i class="fa fa fa-user-plus fa-2x"></i>
+	          <span class="nav-text">
+	                 Add new Employee	
+	          </span>
+	    <% end %>
+	</li>
 <% end %>
 
-<div class="panel panel-danger">
-  <div class="panel-heading"><strong>Employee List</strong></div>
-	<table class="table">
-		<thead>
-			<th>Employee Name</th>
-			<th>Employee ID</th>
-			<th>Email Address</th>
-			<th>salaried?</th>
-			<th>Employed?</th>
-			<th>Site</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% if @site_employees.present? %>
-				<% @site_employees.each do |e| %>
-					<tr>
-					<td><%= link_to e.first_name, edit_site_employee_path(e) %></td>
-					<td><%= e.employee_ID %></td>
-					<td><%= e.phone_number %></td>
-					<td><%= e.email_address %></td>
-					<td class="text-center"><%= e.salaried? ? '✓' : '-' %></td>
-					<td class="text-center"><%= e.employed? ? '✓' : '-' %></td>
-					<td><%= link_to e.site.name, site_path(e.site_id) %></td>
-					</tr>
-					<%end%>
-			<% else %>
-				<tr><td colspan="3">Where are all of the Employees?</td></tr>
-			<% end %>
-		</tbody>
-	</table>
-</div>
-
-<hr/>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#emp" aria-controls="emp" role="tab" data-toggle="tab">Employee Overview</a></li>
+    <li role="presentation"><a href="#allemp" aria-controls="allemp" role="tab" data-toggle="tab">All Employees</a></li>
+  </ul>
+<!-- Nav Content -->
+	<div class="tab-content">
+	  <div role="tabpanel" class="tab-pane fade in active" id="emp">
+	  	....
+	  </div>
+	  <div role="tabpanel" class="tab-pane fade" id="allemp">
+	  		<hr/>
+	    <%= render partial: 'site_employees/employees_table', locals: {permits: @site_permits} %>
+	  </div>
+	    <hr/>
+	  </div>

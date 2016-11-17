@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   
 
+  resources :trainings
+
+  resources :licenses
+
   resources :users
   resources :site_permits
   resources :site_employees
