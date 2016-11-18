@@ -1,5 +1,9 @@
-<h1>New employee_license</h1>
+<h1>Add New License</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', employee_licenses_path %>
+<%= form_for @employee_license do |f| %>
+	<%= render 'fields', f: f %>
+	<div class="form-actions">
+		<%= f.submit "Add License", class: "btn btn-success" %>
+		<%= link_to 'Cancel', employee_licenses_path, class: "btn btn-link" %>
+	</div>
+<% end %>

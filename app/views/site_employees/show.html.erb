@@ -7,6 +7,19 @@
     <% end %>
   </li>
 
+    <li>
+      <%= link_to new_employee_license_path(site_employee: @siteemp) do %>
+          <i class="fa fa-id-card-o"></i>
+            <span class="nav-text">Add Employee License</span>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to new_employee_license_path(site_employee: @siteemp) do %>
+          <i class="fa fa-book"></i>
+            <span class="nav-text">Add Employee Learning</span>
+      <% end %>
+    </li>
 <% end %>
 
 
@@ -27,7 +40,7 @@
 <!-- Nav Content -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active" id="emplisc">
-        <h5>Employee Lic. goes here</h5>
+        <%= render partial: 'site_employees/employee_license_table', locals: {employee: @employee_licenses} %>
     </div>
     <div role="tabpanel" class="tab-pane fade" id="learning">
         <hr/>

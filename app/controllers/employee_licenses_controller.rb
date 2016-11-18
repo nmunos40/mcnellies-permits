@@ -5,9 +5,6 @@ class EmployeeLicensesController < ApplicationController
     @employee_licenses = EmployeeLicense.all
   end
 
-  def show
-  end
-
   def new
     @employee_license = EmployeeLicense.new
   end
@@ -19,36 +16,29 @@ class EmployeeLicensesController < ApplicationController
   def create
     @employee_license = EmployeeLicense.new(employee_license_params)
 
-    respond_to do |format|
       if @employee_license.save
-        format.html { redirect_to @employee_license, notice: 'Employee license was successfully created.' }
-        format.json { render :show, status: :created, location: @employee_license }
+        flash[:success] =  "License was successfully added"
+        redirect_to employee_licenses_path 
       else
-        format.html { render :new }
-        format.json { render json: @employee_license.errors, status: :unprocessable_entity }
+        flash[:error] =  "Something Horrible has happened in the application. We are taking a look" 
       end
-    end
   end
 
 
   def update
-    respond_to do |format|
+
       if @employee_license.update(employee_license_params)
-        format.html { redirect_to @employee_license, notice: 'Employee license was successfully updated.' }
-        format.json { render :show, status: :ok, location: @employee_license }
+        flash[:success] =  "License was successfully updated" 
+        redirect_to employee_licenses_path 
       else
-        format.html { render :edit }
-        format.json { render json: @employee_license.errors, status: :unprocessable_entity }
+        flash[:error] =  "Something Horrible has happened in the application. We are taking a look" 
       end
-    end
   end
 
   def destroy
     @employee_license.destroy
-    respond_to do |format|
-      format.html { redirect_to employee_licenses_url, notice: 'Employee license was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+        flash[:success] =  "License was successfully deleted" 
+        redirect_to employee_licenses_path 
   end
 
   private
@@ -58,6 +48,7 @@ class EmployeeLicensesController < ApplicationController
     end
 
     def employee_license_params
-      params.require(:employee_license).permit(:employee_id, :license_id, :expiration_date, :obtained?)
+      params.require(:employee_license).permit(:site_employee_id, :license_id, :expiration_date, :obtained?)
     end
+
 end

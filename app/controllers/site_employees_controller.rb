@@ -19,6 +19,7 @@ class SiteEmployeesController < ApplicationController
 
 	def show
 		@siteemp = SiteEmployee.find(params[:id]) if params[:id]
+		@employee_licenses = SiteEmployee.find(params[:id]).employee_licenses
 	end
 
 	def edit

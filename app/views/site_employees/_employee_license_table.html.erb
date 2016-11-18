@@ -1,0 +1,33 @@
+
+	<% if @employee_licenses.present? %>
+
+		<% @employee_licenses.less_than_thirty.each do |e| %>
+			<div class="bs-callout bs-callout-danger">
+			  <h4><%=e.license.name %></h4>
+			  	<strong>Expires:</strong><span> <%=e.expiration_date.strftime("%m/%d/%Y") %></span><br/>
+				<strong>Obtained?:</strong><span> <%e.obtained? %></span>  <br/>
+				<%= link_to "edit", edit_employee_license_path(e)%>
+			</div>
+		<%end%>
+
+
+		<% @employee_licenses.between_thirty_and_ninty.each do |e| %>
+			<div class="bs-callout bs-callout-warning">
+			  <h4><%=e.license.name %></h4>
+			  	<strong>Expires:</strong><span> <%=e.expiration_date.strftime("%m/%d/%Y") %></span><br/>
+				<strong>Obtained?:</strong><span> <%e.obtained? %></span>  <br/>
+				<%= link_to "edit", edit_employee_license_path(e)%>
+			</div>
+		<%end%>
+
+		<% @employee_licenses.greater_than_ninty.each do |e| %>
+			<div class="bs-callout bs-callout-success">
+			  <h4><%=e.license.name %></h4>
+			  	<strong>Expires:</strong><span> <%=e.expiration_date.strftime("%m/%d/%Y") %></span><br/>
+				<strong>Obtained?:</strong><span> <%e.obtained? %></span>  <br/>
+				<%= link_to "edit", edit_employee_license_path(e)%>
+			</div>
+	<%end%>
+	<% else %>
+		<br/><td colspan="3">This Employee Does not have any permits?</td></tr>
+	<% end %>

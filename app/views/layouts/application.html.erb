@@ -59,7 +59,7 @@
         </nav>
         <% end %>
         <div class="<%= content_for?(:sidebar) ? 'col-sm-10 col-sm-offset-1' : 'col-sm-12' %> main">
-          <%= render partial: 'shared/flash_messages' %>
+          <%= render partial: "shared/flash_messages", flash: flash %> 
           <h1><%= yield :title %></h1>
           <%= yield %>
           <% unless @disable_nav %>

@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 	    session[:user_id] = user.id
 	    redirect_to site_permits_path
 	  else
-	    flash.now.alert = "Email or password is invalid"
+	    flash[:error]= "Email or password is invalid"
 	    render "new"
 	  end
 	end

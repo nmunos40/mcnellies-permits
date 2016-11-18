@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20161117030157) do
   end
 
   create_table "employee_licenses", force: true do |t|
-    t.integer  "employee_id"
+    t.integer  "site_employee_id"
     t.integer  "license_id"
     t.datetime "expiration_date"
     t.boolean  "obtained?"
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20161117030157) do
     t.datetime "updated_at"
   end
 
-  add_index "employee_licenses", ["employee_id"], name: "index_employee_licenses_on_employee_id", using: :btree
   add_index "employee_licenses", ["license_id"], name: "index_employee_licenses_on_license_id", using: :btree
+  add_index "employee_licenses", ["site_employee_id"], name: "index_employee_licenses_on_site_employee_id", using: :btree
 
   create_table "licenses", force: true do |t|
     t.string   "name"

@@ -1,6 +1,10 @@
 <h1>Editing employee_license</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @employee_license %> |
-<%= link_to 'Back', employee_licenses_path %>
+<h1>Edit Employee License</h1>
+<%= form_for @employee_license do |f| %>
+	<%= render 'fields', f: f %>
+	<div class="form-actions">
+		<%= f.submit "Edit License", class: "btn btn-success" %>
+		<%= link_to 'Cancel', employee_licenses_path %>
+	</div>
+<% end %>
