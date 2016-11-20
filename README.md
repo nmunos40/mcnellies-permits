@@ -10,7 +10,8 @@
 
 
 ### Overview 
-This is an applciation built to track manual business tasks for a company with multiple sites. More Specifically this applciaiton will track permits and insurance payments for multiple sites.
+
+This applciation was built to track resturaunt licenses. It will track expiring permits for both employees and multiple sites. 
 
 
 Release Notes
