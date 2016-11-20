@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161120032328) do
+ActiveRecord::Schema.define(version: 20161120150749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(version: 20161120032328) do
 
   add_index "employee_licenses", ["license_id"], name: "index_employee_licenses_on_license_id", using: :btree
   add_index "employee_licenses", ["site_employee_id"], name: "index_employee_licenses_on_site_employee_id", using: :btree
+
+  create_table "employee_trainings", force: true do |t|
+    t.integer  "site_employee_id"
+    t.integer  "training_id"
+    t.datetime "expiration_date"
+    t.boolean  "obtained?"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "employee_trainings", ["site_employee_id"], name: "index_employee_trainings_on_site_employee_id", using: :btree
+  add_index "employee_trainings", ["training_id"], name: "index_employee_trainings_on_training_id", using: :btree
 
   create_table "licenses", force: true do |t|
     t.string   "name"

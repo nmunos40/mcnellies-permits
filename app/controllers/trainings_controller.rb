@@ -1,14 +1,9 @@
 class TrainingsController < ApplicationController
-  before_action :set_training, only: [:show, :edit, :update, :destroy]
+  before_action :set_training, only: [:edit, :update, :destroy]
   before_filter :authorize
-
-
 
   def index
     @trainings = Training.all
-  end
-
-  def show
   end
 
 
@@ -16,44 +11,35 @@ class TrainingsController < ApplicationController
     @training = Training.new
   end
 
-
   def edit
   end
-
 
   def create
     @training = Training.new(training_params)
 
-    respond_to do |format|
       if @training.save
-        format.html { redirect_to @training, notice: 'Training was successfully created.' }
-        format.json { render :show, status: :created, location: @training }
+        flash[:success] =  "License was successfully created" 
+        redirect_to trainings_path
       else
-        format.html { render :new }
-        format.json { render json: @training.errors, status: :unprocessable_entity }
+        flash[:error] =  "Something went horribly wrong. We will look into that" 
+        render :new
       end
-    end
   end
 
 
   def update
-    respond_to do |format|
       if @training.update(training_params)
-        format.html { redirect_to @training, notice: 'Training was successfully updated.' }
-        format.json { render :show, status: :ok, location: @training }
+        flash[:success]=  "License was successfully Updated" 
+        redirect_to trainings_path
       else
-        format.html { render :edit }
-        format.json { render json: @training.errors, status: :unprocessable_entity }
+        flash[:error] =  "Something went horribly wrong. We will look into that" 
       end
-    end
   end
 
   def destroy
     @training.destroy
-    respond_to do |format|
-      format.html { redirect_to trainings_url, notice: 'Training was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      flash[:success] =  "Training item was successfully Deleted" 
+      redirect_to trainings_path
   end
 
   private

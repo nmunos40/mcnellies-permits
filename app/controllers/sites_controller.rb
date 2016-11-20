@@ -15,6 +15,9 @@ class SitesController < ApplicationController
 		@small_employee_licenses = @site.get_emp_lic('small')
 		@medium_employee_licenses = @site.get_emp_lic('medium')
 		@large_employee_licenses = @site.get_emp_lic('large')
+		@small_employee_trainings = @site.get_emp_train('small')
+		@medium_employee_trainings = @site.get_emp_train('medium')
+		@large_employee_trainings = @site.get_emp_train('large')
 	end
 
 	def index

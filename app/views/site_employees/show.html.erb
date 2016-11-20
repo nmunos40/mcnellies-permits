@@ -15,7 +15,7 @@
     </li>
 
     <li>
-      <%= link_to new_employee_license_path(site_employee: @siteemp) do %>
+      <%= link_to new_employee_training_path(site_employee: @siteemp) do %>
           <i class="fa fa-book"></i>
             <span class="nav-text">Add Learning Requirment</span>
       <% end %>
@@ -25,7 +25,13 @@
     <li>
       <%= link_to licenses_path(site_employee: @siteemp) do %>
           <i class="fa fa-id-card"></i>
-            <span class="nav-text">Licesnses</span>
+            <span class="nav-text">View all Licesnses</span>
+      <% end %>
+    </li>
+    <li>
+    <%= link_to trainings_path(site_employee: @siteemp) do %>
+         <i class="fa fa-book"></i>
+            <span class="nav-text">View all Learning Items</span>
       <% end %>
     </li>
 <% end %>
@@ -51,7 +57,7 @@
     </div>
     <div role="tabpanel" class="tab-pane fade" id="learning">
         <hr/>
-        <h5>Learning Goes Here</h5>
+        <%= render partial: 'site_employees/employee_training_table'%>
     </div>
       <hr/>
   </div>

@@ -2,10 +2,6 @@ class EmployeeLicensesController < ApplicationController
   before_action :set_employee_license, only: [:show, :edit, :update, :destroy]
   before_filter :authorize
 
-  def index
-    @employee_licenses = EmployeeLicense.all
-  end
-
   def new
     @employee_license = EmployeeLicense.new
   end
@@ -19,7 +15,7 @@ class EmployeeLicensesController < ApplicationController
 
       if @employee_license.save
         flash[:success] =  "License was successfully added"
-        redirect_to employee_licenses_path 
+        redirect_to site_employees_path 
       else
         flash[:error] =  "Something Horrible has happened in the application. We are taking a look" 
       end
@@ -30,7 +26,7 @@ class EmployeeLicensesController < ApplicationController
 
       if @employee_license.update(employee_license_params)
         flash[:success] =  "License was successfully updated" 
-        redirect_to employee_licenses_path 
+        redirect_to site_employees_path 
       else
         flash[:error] =  "Something Horrible has happened in the application. We are taking a look" 
       end
@@ -39,7 +35,7 @@ class EmployeeLicensesController < ApplicationController
   def destroy
     @employee_license.destroy
         flash[:success] =  "License was successfully deleted" 
-        redirect_to employee_licenses_path 
+        redirect_to site_employees_path 
   end
 
   private

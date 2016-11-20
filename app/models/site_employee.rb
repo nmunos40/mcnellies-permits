@@ -2,6 +2,8 @@ class SiteEmployee < ActiveRecord::Base
 	belongs_to :site
 	has_many :employee_licenses
 	has_many :licenses, :through => :employee_licenses
+  has_many :employee_trainings
+  has_many :trainings, :through => :employee_trainings
 
   scope :less_than_thirty, -> { where("expiration_date < CURRENT_TIMESTAMP  + '1 month'::interval") }
   scope :between_thirty_and_ninty, -> { where("expiration_date >= CURRENT_TIMESTAMP  + '1 month'::interval and expiration_date <= CURRENT_TIMESTAMP  + '3 month'::interval ") }

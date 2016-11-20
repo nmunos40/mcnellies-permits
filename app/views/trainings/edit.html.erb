@@ -1,6 +1,9 @@
-<h1>Editing training</h1>
+<h1>Edit Training Item</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @training %> |
-<%= link_to 'Back', trainings_path %>
+<%= form_for @training do |f| %>
+	<%= render 'fields', f: f %>
+	<div class="form-actions">
+		<%= f.submit "Edit Training Item", class: "btn btn-success" %>
+		<%= link_to "Cancel", training_path, class: "btn btn-link" %>
+	</div>
+<% end %>

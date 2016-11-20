@@ -1,0 +1,9 @@
+<h1>Add New Employee Training Requirment</h1>
+
+<%= form_for @employee_training do |f| %>
+	<%= render 'fields', f: f %>
+	<div class="form-actions">
+		<%= f.submit "Add Training Requirment", class: "btn btn-success" %>
+		<%= link_to 'Cancel', employee_trainings_path, class: "btn btn-link" %>
+	</div>
+<% end %>

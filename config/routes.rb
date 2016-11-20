@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   
 
+  resources :employee_trainings
+
   get "about", to: 'info#about'
 
   resources :employee_licenses
