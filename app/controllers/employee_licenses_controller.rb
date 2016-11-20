@@ -1,5 +1,6 @@
 class EmployeeLicensesController < ApplicationController
   before_action :set_employee_license, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   def index
     @employee_licenses = EmployeeLicense.all

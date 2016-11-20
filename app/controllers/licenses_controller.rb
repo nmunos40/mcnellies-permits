@@ -1,11 +1,9 @@
 class LicensesController < ApplicationController
   before_action :set_license, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   def index
     @licenses = License.all
-  end
-
-  def show
   end
 
   def new

@@ -1,5 +1,5 @@
 <div class="panel panel-success">
-  <div class="panel-heading"><strong>Employee List</strong></div>
+  <div class="panel-heading"><strong>Manager List</strong></div>
 	<table class="table">
 		<thead>
 			<th class="text-center">Employee Name</th>
@@ -7,25 +7,23 @@
 			<th class="text-center">Email Address</th>
 			<th class="text-center">salaried?</th>
 			<th class="text-center">Employed?</th>
-			<th class="text-center">Manager?</th>
 			<th class="text-center">Site</th>
 			</tr>
 		</thead>
 		<tbody>
-			<% if @site_employees.present? %>
-				<% @site_employees.each do |e| %>
+			<% if @site_managers.present? %>
+				<% @site_managers.each do |e| %>
 					<tr>
 					<td class="text-center"><%= link_to e.to_s, site_employee_path(e) %></td>
 					<td class="text-center"><%= e.employee_ID %></td>
 					<td class="text-center"><%= e.email_address %></td >
 					<td class="text-center"><%= e.salaried ? '✓' : '-' %></td>
 					<td class="text-center"><%= e.employed ? '✓' : '-' %></td>
-					<td class="text-center"><%= e.manager ? '✓' : '-' %></td>
 					<td class="text-center"><%= link_to e.site.name, site_path(e.site_id) %></td>
 					</tr>
 					<%end%>
 			<% else %>
-				<tr><td colspan="3">Where are all of the Employees?</td></tr>
+				<tr><td colspan="3">Where are all of the Managers?</td></tr>
 			<% end %>
 		</tbody>
 	</table>

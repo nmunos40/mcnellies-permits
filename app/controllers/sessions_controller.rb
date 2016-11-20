@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 	before_filter :nav_show
 	before_filter :bodycss
 	
+	
  	def new
 	end
 	def bodycss

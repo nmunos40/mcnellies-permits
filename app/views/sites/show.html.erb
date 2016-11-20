@@ -35,20 +35,35 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#employee" aria-controls="employee" role="tab" data-toggle="tab">Employees</a></li>
-    <li role="presentation"><a href="#permit" aria-controls="permit" role="tab" data-toggle="tab">Managers</a></li>
+    <li role="presentation"><a href="#manager" aria-controls="manager" role="tab" data-toggle="tab">Managers</a></li>
     <li role="presentation"><a href="#permit" aria-controls="permit" role="tab" data-toggle="tab">Permits</a></li>
     <li role="presentation"><a href="#emplisc" aria-controls="emplisc" role="tab" data-toggle="tab">Licenses</a></li>
     <li role="presentation"><a href="#emplearn" aria-controls="emplearn" role="tab" data-toggle="tab">Learning</a></li>
   </ul>
 
+
 <!-- Nav Content -->
 <div class="tab-content">
+
+  <!-- Show all employees for the site -->
   <div role="tabpanel" class="tab-pane fade in active" id="employee">
       <hr/>
     <%= render partial: 'site_employees/employees_table', locals: {permits: @site_employees} %>
   </div>
-  <div role="tabpanel" class="tab-pane fade" id="emplisc">...</div>
+  <!-- Show all of the manaers for the site -->
+  <div role="tabpanel" class="tab-pane fade" id="manager">
+      <hr/>
+    <%= render partial: 'site_employees/employee_manager_table', locals: {permits: @site_managers} %>
+  </div>
+
+  <!-- Show all of the employee licenses for the site -->
+  <div role="tabpanel" class="tab-pane fade" id="emplisc">
+    <hr/>
+    <%= render partial: 'sites/all_employee_license_table'%>
+  </div>
+  <!-- Show all of the emlpoyee learning req. for the site -->
   <div role="tabpanel" class="tab-pane fade" id="emplearn">...</div>
+  <!-- Show all of the employee permits for the site -->
   <div role="tabpanel" class="tab-pane fade" id="permit">
     <hr/>
     <%= render partial: 'site_permits/permit_aged_table', locals: {permits: @site_permits} %>

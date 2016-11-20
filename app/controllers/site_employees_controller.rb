@@ -52,11 +52,9 @@ class SiteEmployeesController < ApplicationController
 		end
 
 		def site_employee_params
-			params.require(:site_employee).permit(:site_id, :first_name, :last_name, :employee_ID, :phone_number, :email_address, :salaried?, :date_hired, :date_fired, :employed?, :site_id )
+			params.require(:site_employee).permit(:first_name, :last_name, :employee_ID, :phone_number, :email_address, :salaried, :date_hired, :date_fired, :employed, :site_id, :manager)
 		end
 end
-
-
 
 
 

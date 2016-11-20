@@ -32,6 +32,7 @@
                 </li>
                 <li><%= link_to "Permit Dashboard", root_path %></li>
                 <li><%= link_to "Employee Dashboard", site_employees_path %></li>
+                <li><%= link_to "Report Center", root_path%></li>
             </ul>
             <div class="navbar-right">
               <p class="navbar-text">Logged in as <%= link_to current_user.username, user_path(current_user.id) %></p>
@@ -65,7 +66,8 @@
           <% unless @disable_nav %>
              <hr/>
             <footer>
-              <p>&copy; Munos.INC <%= Time.now.year %></p>
+              &copy; Munos.INC <%= Time.now.year %> <strong> | </strong>
+              <strong><%=link_to "Site Information", about_path %> </strong>
             </footer>
           <% end %>
         </div>

@@ -1,5 +1,5 @@
 class EmployeeLicense < ActiveRecord::Base
-  belongs_to :employee
+  belongs_to :site_employee
   belongs_to :license
 
 	scope :less_than_thirty, -> { where("expiration_date < CURRENT_TIMESTAMP  + '1 month'::interval") }

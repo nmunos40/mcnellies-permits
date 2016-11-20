@@ -1,0 +1,80 @@
+<div class="panel panel-danger">
+  <div class="panel-heading"><strong>Employee Licenses Expiring in Less Than 30 Days</strong></div>
+	<table class="table">
+		<thead>
+			<th class="text-center">Employee Name</th>
+			<th class="text-center">License Name</th>
+			<th class="text-center">Expiration Date</th>
+			<th class="text-center">Obtained?</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if @small_employee_licenses.present? %>
+				<% @small_employee_licenses.each do |e| %>
+					<tr>
+					<td class="text-center"><%= e.site_employee.to_s %></td>
+					<td class="text-center"><%= e.license.name %></td>
+					<td class="text-center"><%= e.expiration_date.strftime("%m/%d/%Y") %><td>
+					<td class="text-center"><%= e.obtained? %><td>
+					</tr>
+					<%end%>
+			<% else %>
+				<tr><td colspan="3">There are currently no Licenses due in the next 30 days.</td></tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<div class="panel panel-warning">
+  <div class="panel-heading"><strong>Employee Licenses Expiring in 30-90 Days</strong></div>
+	<table class="table">
+		<thead>
+			<th class="text-center">Employee Name</th>
+			<th class="text-center">License Name</th>
+			<th class="text-center">Expiration Date</th>
+			<th class="text-center">Obtained?</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if @medium_employee_licenses.present? %>
+				<% @medium_employee_licenses.each do |e| %>
+					<tr>
+					<td class="text-center"><%= e.site_employee.to_s %></td>
+					<td class="text-center"><%= e.license.name %></td>
+					<td class="text-center"><%= e.expiration_date.strftime("%m/%d/%Y") %><td class="text-center">
+					<td class="text-center"><%= e.obtained? %><td>
+					</tr>
+					<%end%>
+			<% else %>
+				<tr><td colspan="3">There are currently no Licenses due in the next 30 days.</td></tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<div class="panel panel-success">
+  <div class="panel-heading"><strong>Employee Licenses Expiring in 30-90 Days</strong></div>
+	<table class="table">
+		<thead>
+			<th class="text-center">Employee Name</th>
+			<th class="text-center">License Name</th>
+			<th class="text-center">Expiration Date</th>
+			<th class="text-center">Obtained?</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if @large_employee_licenses.present? %>
+				<% @large_employee_licenses.each do |e| %>
+					<tr>
+					<td class="text-center"><%= e.site_employee.to_s %></td>
+					<td class="text-center"><%= e.license.name %></td>
+					<td class="text-center"><%= e.expiration_date.strftime("%m/%d/%Y") %><td>
+					<td class="text-center"><%= e.obtained? %><td>
+					</tr>
+					<%end%>
+			<% else %>
+				<tr><td colspan="3">There are currently no Licenses due in the next 30 days.</td></tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

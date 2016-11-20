@@ -10,18 +10,25 @@
     <li>
       <%= link_to new_employee_license_path(site_employee: @siteemp) do %>
           <i class="fa fa-id-card-o"></i>
-            <span class="nav-text">Add Employee License</span>
+            <span class="nav-text">Add License to Employee</span>
       <% end %>
     </li>
 
     <li>
       <%= link_to new_employee_license_path(site_employee: @siteemp) do %>
           <i class="fa fa-book"></i>
-            <span class="nav-text">Add Employee Learning</span>
+            <span class="nav-text">Add Learning Requirment</span>
+      <% end %>
+    </li>
+
+    <hr/>
+    <li>
+      <%= link_to licenses_path(site_employee: @siteemp) do %>
+          <i class="fa fa-id-card"></i>
+            <span class="nav-text">Licesnses</span>
       <% end %>
     </li>
 <% end %>
-
 
 <div class="bs-callout bs-callout-success">
   <h4><%=@siteemp.to_s %></h4>

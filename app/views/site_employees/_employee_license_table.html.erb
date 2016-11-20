@@ -6,7 +6,8 @@
 			  <h4><%=e.license.name %></h4>
 			  	<strong>Expires:</strong><span> <%=e.expiration_date.strftime("%m/%d/%Y") %></span><br/>
 				<strong>Obtained?:</strong><span> <%e.obtained? %></span>  <br/>
-				<%= link_to "edit", edit_employee_license_path(e)%>
+				<%= link_to "edit", edit_employee_license_path(e)%> /
+				<%= link_to 'Destroy',  employee_license_path(e), data: { confirm: 'Are you sure?' }, method: :delete %>
 			</div>
 		<%end%>
 
@@ -16,7 +17,11 @@
 			  <h4><%=e.license.name %></h4>
 			  	<strong>Expires:</strong><span> <%=e.expiration_date.strftime("%m/%d/%Y") %></span><br/>
 				<strong>Obtained?:</strong><span> <%e.obtained? %></span>  <br/>
-				<%= link_to "edit", edit_employee_license_path(e)%>
+				<%= link_to "edit", edit_employee_license_path(e)%> /
+				<%= link_to 'Destroy',  employee_license_path(e), data: { confirm: 'Are you sure?' }, method: :delete %>
+
+
+				
 			</div>
 		<%end%>
 
@@ -25,7 +30,9 @@
 			  <h4><%=e.license.name %></h4>
 			  	<strong>Expires:</strong><span> <%=e.expiration_date.strftime("%m/%d/%Y") %></span><br/>
 				<strong>Obtained?:</strong><span> <%e.obtained? %></span>  <br/>
-				<%= link_to "edit", edit_employee_license_path(e)%>
+				<%= link_to "edit", edit_employee_license_path(e)%> /
+				<%= link_to 'Destroy',  employee_license_path(e), data: { confirm: 'Are you sure?' }, method: :delete %>
+
 			</div>
 	<%end%>
 	<% else %>
