@@ -1,8 +1,6 @@
 # Mcnellies Permit Application
 
-
-<<<<<<< HEAD:README.rdoc
-=== Overview 
+ Overview 
 =======
 | Release                       | Developer     | Release Date  |
 | ------------------------------|:-------------:| -------------:|
@@ -12,20 +10,22 @@
 
 
 ### Overview 
->>>>>>> dd5184c6f5198792644d64ebcbc2a73b43126911:README.md
-===============
-
 This is an applciation built to track manual business tasks for a company with multiple sites. More Specifically this applciaiton will track permits and insurance payments for multiple sites.
 
 
-=== Release Notes
+Release Notes
 ===============
 
-====Release Notes - v 1.1
+Release Notes - v 1.1
 1. Multi tenant application
 2. Re-factoring DB to include companies and Tenants
+3. Added Site Employees
+4. Added Employee Licenses
+5. Added employee training
+6. Re-factored all dashboards
+7. added additional security
 
-====Release Notes - V 1.0
+Release Notes - V 1.0
 1. Emails are currently hard coded. (Eventually will come from the user list)
 2. Permits are the only records that can be deleted. (I want to manage deleting of sites and users manually)
 3. The application runs on Rails 4 and Ruby 2.1.1
