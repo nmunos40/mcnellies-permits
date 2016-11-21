@@ -37,8 +37,8 @@
     <li role="presentation" class="active"><a href="#employee" aria-controls="employee" role="tab" data-toggle="tab">Employees</a></li>
     <li role="presentation"><a href="#manager" aria-controls="manager" role="tab" data-toggle="tab">Managers</a></li>
     <li role="presentation"><a href="#permit" aria-controls="permit" role="tab" data-toggle="tab">Permits</a></li>
-    <li role="presentation"><a href="#emplisc" aria-controls="emplisc" role="tab" data-toggle="tab">Licenses</a></li>
-    <li role="presentation"><a href="#emplearn" aria-controls="emplearn" role="tab" data-toggle="tab">Learning</a></li>
+    <li role="presentation"><a href="#emplisc" aria-controls="emplisc" role="tab" data-toggle="tab">Employee Licenses</a></li>
+    <li role="presentation"><a href="#emplearn" aria-controls="emplearn" role="tab" data-toggle="tab">Employee Training</a></li>
   </ul>
 
 
@@ -59,11 +59,12 @@
   <!-- Show all of the employee licenses for the site -->
   <div role="tabpanel" class="tab-pane fade" id="emplisc">
     <hr/>
-    <%= render partial: 'sites/all_employee_license_table'%>
+    <%= render partial: 'employee_licenses/index_aged_employee_licenses'%>
   </div>
   <!-- Show all of the emlpoyee learning req. for the site -->
   <div role="tabpanel" class="tab-pane fade" id="emplearn">
-    <%= render partial: 'sites/all_employee_trainings_table'%>
+    <hr/>
+    <%= render partial: 'employee_trainings/index_aged_employee_trainings'%> 
   </div>
   <!-- Show all of the employee permits for the site -->
   <div role="tabpanel" class="tab-pane fade" id="permit">

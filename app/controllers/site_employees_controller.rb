@@ -34,6 +34,12 @@ class SiteEmployeesController < ApplicationController
 
 	def index
 		@site_employees = SiteEmployee.all
+		@small_employee_licenses = @site_employees.emp_lic_small
+		@medium_employee_licenses = @site_employees.emp_lic_medium
+		@large_employee_licenses = @site_employees.emp_lic_large 
+		@small_employee_trainings = @site_employees.emp_train_small
+		@medium_employee_trainings = @site_employees.emp_train_medium
+		@large_employee_trainings = @site_employees.emp_train_large
 		
 	end
 

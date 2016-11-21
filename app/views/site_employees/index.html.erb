@@ -10,17 +10,31 @@
 <% end %>
 
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#emp" aria-controls="emp" role="tab" data-toggle="tab">Employee Overview</a></li>
-    <li role="presentation"><a href="#allemp" aria-controls="allemp" role="tab" data-toggle="tab">All Employees</a></li>
+    <li role="presentation" class="active"><a href="#emp" aria-controls="emp" role="tab" data-toggle="tab">All Employees</a></li>
+    <li role="presentation"><a href="#emplic" aria-controls="emplic" role="tab" data-toggle="tab">Employee License Overview</a></li>
+    <li role="presentation"><a href="#emptrain" aria-controls="emptrain" role="tab" data-toggle="tab">Employee Training Overview</a></li>
   </ul>
 <!-- Nav Content -->
 	<div class="tab-content">
+		<!-- All Employees  Pannel -->
 	  <div role="tabpanel" class="tab-pane fade in active" id="emp">
-	  	....
+			<hr/>
+	  		<%= render partial: 'site_employees/employees_table' %>
 	  </div>
-	  <div role="tabpanel" class="tab-pane fade" id="allemp">
+
+	  	<!-- Overview of employee licenses -->
+	  <div role="tabpanel" class="tab-pane fade" id="emplic">
 	  		<hr/>
-	    <%= render partial: 'site_employees/employees_table', locals: {employees: @site_employees} %>
+			<%= render partial: 'employee_licenses/index_aged_employee_licenses'%>
 	  </div>
-	    <hr/>
+
+	  	<!-- Overview of employee Training -->
+	  <div role="tabpanel" class="tab-pane fade" id="emptrain">
+	  		<hr/>
+			<%= render partial: 'employee_trainings/index_aged_employee_trainings'%> 
+	  </div>
 	</div>
+
+
+	    
+    

@@ -5,10 +5,6 @@ class SiteEmployee < ActiveRecord::Base
   has_many :employee_trainings
   has_many :trainings, :through => :employee_trainings
 
-  scope :less_than_thirty, -> { where("expiration_date < CURRENT_TIMESTAMP  + '1 month'::interval") }
-  scope :between_thirty_and_ninty, -> { where("expiration_date >= CURRENT_TIMESTAMP  + '1 month'::interval and expiration_date <= CURRENT_TIMESTAMP  + '3 month'::interval ") }
-  scope :greater_than_ninty, -> { where("expiration_date > CURRENT_TIMESTAMP  + '3 month'::interval" ) }
-
   def self.manager
   	where(manager: true)
   end
@@ -20,5 +16,31 @@ class SiteEmployee < ActiveRecord::Base
   def to_s
     "#{first_name} #{last_name}"
   end
+
+  def self.emp_lic_small
+    self.all.map{|se| se.employee_licenses.less_than_thirty}.flatten
+  end
+
+  def self.emp_lic_medium
+    self.all.map{|se| se.employee_licenses.between_thirty_and_ninty}.flatten
+  end
+
+  def self.emp_lic_large
+    self.all.map{|se| se.employee_licenses.greater_than_ninty}.flatten
+  end
+
+  def self.emp_train_small
+    self.all.map{|se| se.employee_trainings.less_than_thirty}.flatten
+  end
+
+  def self.emp_train_medium
+    self.all.map{|se| se.employee_trainings.between_thirty_and_ninty}.flatten
+  end
+
+  def self.emp_train_large
+    self.all.map{|se| se.employee_trainings.greater_than_ninty}.flatten
+  end
+
+  
 
 end

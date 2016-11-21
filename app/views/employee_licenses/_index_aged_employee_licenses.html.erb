@@ -3,6 +3,7 @@
 	<table class="table">
 		<thead>
 			<th class="text-center">Employee Name</th>
+			<th class="text-center">Employed By</th>
 			<th class="text-center">License Name</th>
 			<th class="text-center">Expiration Date</th>
 			<th class="text-center">Obtained?</th>
@@ -12,7 +13,8 @@
 			<% if @small_employee_licenses.present? %>
 				<% @small_employee_licenses.each do |e| %>
 					<tr>
-					<td class="text-center"><%= e.site_employee.to_s %></td>
+					<td class="text-center"><%= link_to e.site_employee.to_s, site_employee_path(e.site_employee)%></td>
+					<td class="text-center"><%= link_to e.site_employee.site.name, site_path(e.site_employee.site)%></td>
 					<td class="text-center"><%= e.license.name %></td>
 					<td class="text-center"><%= e.expiration_date.strftime("%m/%d/%Y") %><td>
 					<td class="text-center"><%= e.obtained? %><td>
@@ -30,6 +32,7 @@
 	<table class="table">
 		<thead>
 			<th class="text-center">Employee Name</th>
+			<th class="text-center">Employed By</th>
 			<th class="text-center">License Name</th>
 			<th class="text-center">Expiration Date</th>
 			<th class="text-center">Obtained?</th>
@@ -39,7 +42,8 @@
 			<% if @medium_employee_licenses.present? %>
 				<% @medium_employee_licenses.each do |e| %>
 					<tr>
-					<td class="text-center"><%= e.site_employee.to_s %></td>
+					<td class="text-center"><%= link_to e.site_employee.to_s, site_employee_path(e.site_employee)%></td>
+					<td class="text-center"><%= link_to e.site_employee.site.name, site_path(e.site_employee.site)%></td>
 					<td class="text-center"><%= e.license.name %></td>
 					<td class="text-center"><%= e.expiration_date.strftime("%m/%d/%Y") %><td class="text-center">
 					<td class="text-center"><%= e.obtained? %><td>
@@ -57,6 +61,7 @@
 	<table class="table">
 		<thead>
 			<th class="text-center">Employee Name</th>
+			<th class="text-center">Employed By</th>
 			<th class="text-center">License Name</th>
 			<th class="text-center">Expiration Date</th>
 			<th class="text-center">Obtained?</th>
@@ -66,7 +71,8 @@
 			<% if @large_employee_licenses.present? %>
 				<% @large_employee_licenses.each do |e| %>
 					<tr>
-					<td class="text-center"><%= e.site_employee.to_s %></td>
+					<td class="text-center"><%= link_to e.site_employee.to_s, site_employee_path(e.site_employee)%></td>
+					<td class="text-center"><%= link_to e.site_employee.site.name, site_path(e.site_employee.site)%></td>
 					<td class="text-center"><%= e.license.name %></td>
 					<td class="text-center"><%= e.expiration_date.strftime("%m/%d/%Y") %><td>
 					<td class="text-center"><%= e.obtained? %><td>
