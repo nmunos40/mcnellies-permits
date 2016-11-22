@@ -14,4 +14,4 @@ production:
   adapter: postgresql
   encoding: unicode
   database: permit_production
-  username: postgres
+  username: permitpal
