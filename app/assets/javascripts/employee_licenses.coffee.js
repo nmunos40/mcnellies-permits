@@ -1,0 +1,1 @@
+$('#emp_lic_expire').datepicker({ dateFormat: 'yy-mm-dd' });

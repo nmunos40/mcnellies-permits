@@ -5,6 +5,8 @@ class SiteEmployee < ActiveRecord::Base
   has_many :employee_trainings
   has_many :trainings, :through => :employee_trainings
 
+  validates_presence_of :site_id, :first_name, :last_name
+
   def self.manager
   	where(manager: true)
   end

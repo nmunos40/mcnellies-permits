@@ -3,6 +3,10 @@ class SitesController < ApplicationController
 	before_filter :authorize
 	helper_method :sort_column, :sort_direction
 
+	def dashboard
+		@sites = Site.all
+	end
+
 	def new
 		@site = Site.new
 	end

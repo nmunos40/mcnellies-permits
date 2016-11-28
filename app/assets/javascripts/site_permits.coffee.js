@@ -1,0 +1,1 @@
+$('#site_perm_exp').datepicker({ dateFormat: 'yy-mm-dd' });

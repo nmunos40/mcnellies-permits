@@ -1,0 +1,1 @@
+$('#emp_train_expire').datepicker({ dateFormat: 'yy-mm-dd' });

@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'home', to: 'sites#index'
 
-  root 'site_permits#index'
+  root 'sessions#new'
   get 'export' => 'site_permits#export'
 end

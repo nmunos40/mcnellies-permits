@@ -31,9 +31,5 @@ gem 'spring',        group: :development
 gem 'apartment'                     # Multitenant support
 gem 'hirb'                          # Better DB output in IRB
 gem 'font-awesome-sass'
-
-gem 'capistrano'
-gem 'capistrano-bundler'
-gem 'capistrano-rails'
-gem 'capistrano-rvm', github: "capistrano/rvm"
+gem 'jquery-ui-rails'
 

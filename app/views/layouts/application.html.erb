@@ -16,7 +16,7 @@
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
-            <%= link_to Tenant.current.name, root_path, class: "navbar-brand" %>
+            <%= link_to Tenant.current.name, home_path, class: "navbar-brand" %>
           </div>
           <%if current_user %>
             <ul class="nav navbar-nav">
@@ -30,9 +30,9 @@
                       <%end%>
                     </ul>
                 </li>
-                <li><%= link_to "Permit Dashboard", root_path %></li>
+                <li><%= link_to "Permit Dashboard", site_permits_path %></li>
                 <li><%= link_to "Employee Dashboard", site_employees_path %></li>
-                <li><%= link_to "Report Center", root_path%></li>
+                <li><%= link_to "Report Center", home_path%></li>
             </ul>
             <div class="navbar-right">
               <p class="navbar-text">Logged in as <%= link_to current_user.username, user_path(current_user.id) %></p>

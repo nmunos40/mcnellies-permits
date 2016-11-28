@@ -22,7 +22,7 @@ class SitePermitsController < ApplicationController
 
 	def destroy
 		@site_permit.destroy
-		redirect_to root_path
+		redirect_to home_path
 		flash[:success] = "The product has been successfully removed."	
   	end
 
