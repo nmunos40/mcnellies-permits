@@ -1,7 +1,7 @@
 class SitesController < ApplicationController
 	before_filter :setup_site
 	before_filter :authorize
-	helper_method :sort_column, :sort_direction
+ 	helper_method :sort_column, :sort_direction
 
 	def dashboard
 		@sites = Site.all
@@ -25,7 +25,7 @@ class SitesController < ApplicationController
 	end
 
 	def index
-		@sites = Site.all 
+		@sites = Site.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 2, page:params[:page])
 	end
 
 	def create
@@ -62,7 +62,7 @@ class SitesController < ApplicationController
 		end
 
 		 def sort_column
-		    @site.site_permits.column_names.include?(params[:sort]) ? params[:sort] : "name"
+		    Site.column_names.include?(params[:sort]) ? params[:sort] : "name"
 		 end
   
 		 def sort_direction

@@ -1,6 +1,7 @@
 class SitePermitsController < ApplicationController
 	before_filter :setup_site_permit
 	before_filter :authorize
+	helper_method :sort_column, :sort_direction
 
 	def new
 		@site_permit = SitePermit.new
@@ -27,7 +28,7 @@ class SitePermitsController < ApplicationController
   	end
 
 	def index
-		@site_permits = SitePermit.all
+		@site_permits = SitePermit.order(sort_column + " " + sort_direction)
 		
 	end
 
@@ -58,4 +59,12 @@ class SitePermitsController < ApplicationController
 		def site_permit_params
 			params.require(:site_permit).permit(:name, :description, :expiration_date, :manager, :site_id, :submitted)
 		end
+
+		def sort_column
+		    SitePermit.column_names.include?(params[:sort]) ? params[:sort] : "name"
+		 end
+  
+		 def sort_direction
+		    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+		 end
 end

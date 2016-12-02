@@ -32,4 +32,6 @@ gem 'apartment'                     # Multitenant support
 gem 'hirb'                          # Better DB output in IRB
 gem 'font-awesome-sass'
 gem 'jquery-ui-rails'
+gem 'jquery-rails'
+gem 'will_paginate'
 

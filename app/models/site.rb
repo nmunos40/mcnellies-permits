@@ -30,4 +30,12 @@ class Site < ActiveRecord::Base
 			
   	end
 
+	def self.search(search)
+	  if search
+	    where('lower(name) LIKE ?', "%#{search.downcase}%")
+	  else
+	    all
+	  end
+	end
+
 end

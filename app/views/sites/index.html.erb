@@ -1,3 +1,5 @@
+<!-- Sidebar links -->
+
 <%= content_for :sidebar do %>
     <li>
 		<%= link_to new_site_path do %>
@@ -7,33 +9,20 @@
 		    	</span>
 		<% end %>
 	</li>
-
 <% end %>
 
-<div class="panel panel-default">
-  <div class="panel-heading"><Strong><%=Tenant.current.name %> Sites </Strong></div>
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th class="text-center">FEIN Number</th>
-<!-- 				<th>Last Permit Name</th>
-				<th>Last Permit EXP. Date </th> -->
-			</tr>
-		</thead>
-		<tbody>
-			<% if @sites.present? %>
-				<% @sites.each do |e| %>
-					<tr>
-						<td><%= link_to e.name, site_path(e) %></td>
-						<td class="text-center"><%= e.fein_number %></td>
-						<td><%# e.permit.last.name %></td>
-						<td><%# e.permit.last.expiration_date %></td>
-					</tr>
-				<% end %>
-			<% else %>
-				<tr><td colspan="3">There are currently no sites to show.</td></tr>
-			<% end %>
-		</tbody>
-	</table>
-</div>
+<hr/>
+
+<!-- Searching -->
+<%= form_tag sites_path, :method => 'get', id: "site_search", class: "form-inline" do %>
+	<div class= "form-group">
+		<%= hidden_field_tag :direction, params[:direction] %>
+		<%= hidden_field_tag :sort, params[:sort] %>
+	  <p>
+	    <%= text_field_tag :search, params[:search], class: "form-control" %>
+	    <%= submit_tag "Search", :name => nil, class: "btn btn-primary" %>
+	  </p>
+	</div>
+<% end %>
+
+<%= render 'sites' %>

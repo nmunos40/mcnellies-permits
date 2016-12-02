@@ -1,6 +1,7 @@
 class SiteEmployeesController < ApplicationController
 	before_filter :setup_site_employee
 	before_filter :authorize
+	helper_method :sort_column, :sort_direction
 
 	def new
 		@site_employee = SiteEmployee.new
@@ -33,7 +34,7 @@ class SiteEmployeesController < ApplicationController
   	end
 
 	def index
-		@site_employees = SiteEmployee.all
+		@site_employees = SiteEmployee.order(sort_column + " " + sort_direction).paginate(per_page: 2, page:params[:page])
 		@small_employee_licenses = @site_employees.emp_lic_small
 		@medium_employee_licenses = @site_employees.emp_lic_medium
 		@large_employee_licenses = @site_employees.emp_lic_large 
@@ -61,6 +62,14 @@ class SiteEmployeesController < ApplicationController
 		def site_employee_params
 			params.require(:site_employee).permit(:first_name, :last_name, :employee_ID, :phone_number, :email_address, :salaried, :date_hired, :date_fired, :employed, :site_id, :manager)
 		end
+
+		 def sort_column
+		    SiteEmployee.column_names.include?(params[:sort]) ? params[:sort] : "first_name"
+		 end
+  
+		 def sort_direction
+		    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+		 end
 end
 
 
