@@ -1,0 +1,11 @@
+<h2>Log New Issue/Bug</h2>
+<div class="well well-lg">
+<%= form_for @issue do |f| %>
+	<%= render 'fields', f: f %>
+	<div class="form-actions">
+		<%= f.submit "Log Issue", class: "btn btn-success" %>
+		<%= link_to "Cancel", issues_path, class: "btn btn-link" %>
+	</div>
+<% end %>
+
+</div>

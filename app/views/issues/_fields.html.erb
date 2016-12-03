@@ -1,0 +1,19 @@
+  <div class="field">
+    <h4>Submitted By: <%=@current_user.username %></h4>
+    <%= hidden_field_tag "submitted_by", @current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description , class: "form-control"%>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select :status, ['Open', 'Resolved', 'In Development', 'No longer Needed' ], class: "form-control" %>
+  </div>
+
+  <hr/>

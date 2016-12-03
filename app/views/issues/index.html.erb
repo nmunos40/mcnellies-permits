@@ -1,0 +1,33 @@
+  
+<div class="page-header">
+  <h1>Permit-Pal </h1>
+</div>
+<br/>
+<blockquote>
+  <p>Site issues are tracked and maintined in the tabs below.</p>
+</blockquote>
+
+<hr/>
+<br/>
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#open" aria-controls="open" role="tab" data-toggle="tab">Open Issues</a></li>
+    <li role="presentation"><a href="#closed" aria-controls="closed" role="tab" data-toggle="tab">Recently Closed Issues</a></li>
+  </ul>
+<!-- Nav Content -->
+  <div class="tab-content">
+    <!-- All Employees  Pannel -->
+    <div role="tabpanel" class="tab-pane fade in active" id="open">
+      <hr/>
+        <%= render partial: 'issues/open_issues' %>
+        
+    </div>
+
+      <!-- Overview of employee licenses -->
+    <div role="tabpanel" class="tab-pane fade" id="closed">
+        <hr/>
+       <%= render partial: 'issues/closed_issues' %>
+    </div>
+
+
+<%= link_to 'New Issue', new_issue_path %>

@@ -66,8 +66,11 @@
           <% unless @disable_nav %>
              <hr/>
             <footer>
-              &copy; Munos.INC <%= Time.now.year %> <strong> | </strong>
-              <strong><%=link_to "Site Information", about_path %> </strong>
+                &copy; Munos.INC <%= Time.now.year %> 
+                <strong> | </strong>
+                <strong><%=link_to "Site Information", issues_path %></strong>
+                <strong> | </strong>
+                <strong><%=link_to "Submit Bug", new_issue_path %> </strong>
             </footer>
           <% end %>
         </div>

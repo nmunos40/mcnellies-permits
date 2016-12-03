@@ -1,0 +1,56 @@
+<% if @issue.present? %>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <ul class="list-data">
+        <li>
+          <div class="row">
+            <strong class="col-xs-12 col-md-4">Issue Name</strong> 
+            <span class="col-xs-12 col-md-8"><%=@issue.name %></span>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <strong class="col-xs-12 col-md-4">Description</strong> 
+            <span class="col-xs-12 col-md-8"><%=@issue.description%></span>
+          </div>
+        </li> 
+        <li>
+          <div class="row">
+            <strong class="col-xs-12 col-md-4">Submitted By</strong> 
+            <span class="col-xs-12 col-md-8"><%=@issue.submitted_by %></span>
+          </div>
+        </li>   
+        <li>
+          <div class="row">
+            <strong class="col-xs-12 col-md-4">Submitted Date</strong> 
+            <span class="col-xs-12 col-md-8"><%=@issue.created_at.strftime("%m/%d/%Y")%></span>
+          </div>
+        </li> 
+        <li>
+          <div class="row">
+            <strong class="col-xs-12 col-md-4">Last Update Date</strong> 
+            <span class="col-xs-12 col-md-8"><%=@issue.updated_at.strftime("%m/%d/%Y/ at %H:%M %p")%></span>
+          </div>
+        </li> 
+        <li>
+          <div class="row">
+            <strong class="col-xs-12 col-md-4">Issue Satus</strong> 
+            <span class="col-xs-12 col-md-8"><%=@issue.status %></span>
+          </div>
+        </li> 
+        <li>
+          <div class="row">
+            <strong class="col-xs-12 col-md-4">Resolution Date</strong> 
+            <span class="col-xs-12 col-md-8"><%=@issue.resolution_date.strftime("%m/%d/%Y") %></span>
+          </div>
+        </li> 
+      </ul> 
+    </div>
+  </div>
+<% else %>
+  <tr><td colspan="3">We cant find the issue?</td></tr>
+<% end %>
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>

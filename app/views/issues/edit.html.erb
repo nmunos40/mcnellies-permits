@@ -1,0 +1,9 @@
+<h1>Updating issue: <%= @issue.id%></h1>
+
+<%= form_for @issue do |f| %>
+	<%= render 'fields', f: f %>
+	<div class="form-actions">
+		<%= f.submit "Update Issue", class: "btn btn-success" %>
+		<%= link_to "Cancel", issue_path(@issue), class: "btn btn-link" %>
+	</div>
+<% end %>
