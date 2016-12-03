@@ -1,6 +1,6 @@
   <div class="field">
     <h4>Submitted By: <%=@current_user.username %></h4>
-    <%= hidden_field_tag "submitted_by", @current_user.id %>
+    <%= f.hidden_field :submitted_by, value: @current_user.username %>
   </div>
 
   <div class="field">
