@@ -64,7 +64,7 @@ class SiteEmployeesController < ApplicationController
 		end
 
 		 def sort_column
-		    SiteEmployee.column_names.include?(params[:sort]) ? params[:sort] : "first_name"
+		    SiteEmployee.column_names.include?(params[:sort]) ? params[:sort] : "last_name"
 		 end
   
 		 def sort_direction

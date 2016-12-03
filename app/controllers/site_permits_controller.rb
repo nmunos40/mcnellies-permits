@@ -28,8 +28,9 @@ class SitePermitsController < ApplicationController
   	end
 
 	def index
-		@site_permits = SitePermit.order(sort_column + " " + sort_direction)
-		
+		@site_permits_red = SitePermit.less_than_thirty.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 2, page:params[:red_page])
+		@site_permits_yellow = SitePermit.between_thirty_and_ninty.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 2, page:params[:yellow_page])
+		@site_permits_green = SitePermit.greater_than_ninty.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 2, page:params[:green_page])
 	end
 
 	def update
