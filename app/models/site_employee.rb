@@ -43,6 +43,11 @@ class SiteEmployee < ActiveRecord::Base
     self.all.map{|se| se.employee_trainings.greater_than_ninty}.flatten
   end
 
-  
+  # import a list of site_employees
+  def self.import(file)
+    CSV.foreach(file.path headers: true) do |row|
+      SiteEmployee.create! (row.to_hash)
+    end
+  end
 
 end

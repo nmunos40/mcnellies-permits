@@ -5,6 +5,7 @@ class CreateIssues < ActiveRecord::Migration
       t.string :description
       t.string :submitted_by
       t.string :status
+      t.string :url
       t.datetime :resolution_date
       t.datetime :created_at
       t.datetime :updated_at

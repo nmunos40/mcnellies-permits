@@ -34,4 +34,5 @@ gem 'font-awesome-sass'
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
 gem 'will_paginate'
+gem 'roo'
 

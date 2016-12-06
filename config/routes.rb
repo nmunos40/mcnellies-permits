@@ -16,7 +16,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :site_permits
-  resources :site_employees
+  resources :site_employees do 
+    collection {post :import}
+  end
   resources :sites
   resource :sessions
   resource :password_reset

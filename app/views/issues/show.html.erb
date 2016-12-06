@@ -17,6 +17,12 @@
         </li> 
         <li>
           <div class="row">
+            <strong class="col-xs-12 col-md-4">URL Impacted</strong> 
+            <span class="col-xs-12 col-md-8"><%=@issue.url%></span>
+          </div>
+        </li> 
+        <li>
+          <div class="row">
             <strong class="col-xs-12 col-md-4">Submitted By</strong> 
             <span class="col-xs-12 col-md-8"><%=@issue.submitted_by %></span>
           </div>
@@ -42,7 +48,7 @@
         <li>
           <div class="row">
             <strong class="col-xs-12 col-md-4">Resolution Date</strong> 
-            <span class="col-xs-12 col-md-8"><%=@issue.resolution_date.strftime("%m/%d/%Y") %></span>
+            <span class="col-xs-12 col-md-8"><%=@issue.resolution_date ? @issue.resolution_date.strftime("%m/%d/%Y") : "Not Resolved" %></span>
           </div>
         </li> 
       </ul> 

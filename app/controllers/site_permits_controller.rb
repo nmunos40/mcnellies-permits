@@ -12,7 +12,7 @@ class SitePermitsController < ApplicationController
 		@site_permits = SitePermit.all 
 		if @site_permit.save
 			flash[:success] = "Successfully created the Permit."	
-			 redirect_to sites_path
+			 redirect_to site_path(@site_permit.site)
 		else
 		render :new
 		end
@@ -36,7 +36,7 @@ class SitePermitsController < ApplicationController
 	def update
 		if @site_permit.update_attributes(site_permit_params)
 			flash[:success] = "Permit updated successfully."
-			redirect_to sites_path
+			redirect_to site_path(@site_permit.site)
 		else
 			render :edit
 		end

@@ -2,12 +2,14 @@
   <div class="panel-heading"><strong>Issues List</strong></div>
 	<table class="table">
 		<thead>
-			<th class="text-center">Name</th>
-			<th class="text-center">Description</th>
-			<th class="text-center">Submitted By</th>
-			<th class="text-center">Status</th>
-			<th class="text-center">Date Created</th>
-			<th class="text-center">Last Updated Date</th>
+			<th class="text-center"><%= sortable "name", "Name" %></th>
+			<th class="text-center"><%= sortable "description", "Description" %></th>
+			<th class="text-center"><%= sortable "url", "URL Impacted" %></th>
+			<th class="text-center"><%= sortable "subited_by", "Submitted By" %></th>
+			<th class="text-center"><%= sortable "status", "Status" %></th>
+<!-- 			<th class="text-center"><%= sortable "created_at", "Date Created" %></th>
+			<th class="text-center"><%= sortable "updated_at", "Last Updated Date" %></th>
+			<th class="text-center"><%= sortable "resolution_date", "Resolution Date" %></th> -->
 			</tr>
 		</thead> 
 		<tbody>
@@ -16,14 +18,16 @@
 					<tr>
 					<td class="text-center"><%= link_to e.name, issue_path(e) %></td>
 					<td class="text-center"><%= e.description %></td>
+					<td class="text-center"><%= e.url %></td>
 					<td class="text-center"><%= e.submitted_by %></td >
 					<td class="text-center"><%= e.status %></td>
-					<td class="text-center"><%= e.created_at.strftime("%m/%d/%Y")%></td>
+<!-- 					<td class="text-center"><%= e.created_at.strftime("%m/%d/%Y")%></td>
 					<td class="text-center"><%= e.updated_at.strftime("%m/%d/%Y/ at %H:%M %p")%></td>
+					<td class="text-center"><%=  e.resolution_date ? e.resolution_date.strftime("%m/%d/%Y") : "Not Resolved"%></td> -->
 					</tr>
 					<%end%>
 			<% else %>
-				<tr><td colspan="3">Where are all of the Employees?</td></tr>
+				<tr><td colspan="3">We are not working on any bugs</td></tr>
 			<% end %>
 		</tbody>
 	</table>

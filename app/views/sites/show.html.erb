@@ -15,7 +15,7 @@
   </li>
 
   <li>
-    <%= link_to new_site_employee_path do %>
+    <%= link_to new_site_employee_path(site_id: @site) do %>
           <i class="fa fa fa-user-plus fa-2x"></i>
             <span class="nav-text">Add new Employee</span>
       <% end %>

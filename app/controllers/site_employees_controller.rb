@@ -12,7 +12,7 @@ class SiteEmployeesController < ApplicationController
 		@site_employees = SiteEmployee.all 
 		if @site_employee.save
 			flash[:success] = "Successfully created the Employee."	
-			 redirect_to sites_path
+			 redirect_to site_path(@site_employee.site)
 		else
 		render :new
 		end
@@ -34,7 +34,7 @@ class SiteEmployeesController < ApplicationController
   	end
 
 	def index
-		@site_employees = SiteEmployee.order(sort_column + " " + sort_direction).paginate(per_page: 2, page:params[:page])
+		@site_employees = SiteEmployee.order(sort_column + " " + sort_direction).paginate(per_page: 20, page:params[:page])
 		@small_employee_licenses = @site_employees.emp_lic_small
 		@medium_employee_licenses = @site_employees.emp_lic_medium
 		@large_employee_licenses = @site_employees.emp_lic_large 
@@ -51,6 +51,11 @@ class SiteEmployeesController < ApplicationController
 		else
 			render :edit
 		end
+	end
+
+	def import
+		params[:file]
+		redirect_to site_employees_path, notice: "Employees have been imported."
 	end
 	
 	private

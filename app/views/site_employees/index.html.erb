@@ -36,5 +36,13 @@
 	</div>
 
 
-	    
+
+<h2>Import Employees</h2>
+
+<%= form_tag import_site_employees_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+
     

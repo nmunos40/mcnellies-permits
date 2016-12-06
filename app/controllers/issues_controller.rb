@@ -1,6 +1,7 @@
 class IssuesController < ApplicationController
   before_action :set_issue, only: [:show, :edit, :update, :destroy]
   before_filter :authorize
+  helper_method :sort_column, :sort_direction
 
   def index
     @openissues = Issue.all.open
@@ -51,6 +52,14 @@ class IssuesController < ApplicationController
     end
 
     def issue_params
-      params.require(:issue).permit(:name, :description, :submitted_by, :status, :resolution_date)
+      params.require(:issue).permit(:name, :description, :url, :submitted_by, :status, :resolution_date)
+    end
+
+    def sort_column
+        Site.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+  
+    def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

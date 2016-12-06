@@ -1,5 +1,4 @@
 <%= render partial: 'shared/errors', locals: {object: f.object} %>
-
 <div class="form-group">
 	<%= f.label :site %>
 	<%= f.collection_select :site_id, Site.all, :id, :name, {include_blank: 'Select a Company', selected: (params[:site_id].blank? ? (f.object.site_id.present? ? f.object.site.id : '') : params[:site_id])}, {class: "form-control"} %>
@@ -45,12 +44,12 @@
 
 <div class="form-group">
 	<%= f.label :date_hired %>
-	<%= f.text_field :date_hired, class: "form-control" %>
+	<%= f.text_field :date_hired, class: "form-control", id: "date_hired" %>
 </div>
 
 <div class="form-group">
 	<%= f.label :date_fired %>
-	<%= f.text_field :date_fired, class: "form-control" %>
+	<%= f.text_field :date_fired, class: "form-control", id: "date_fired" %>
 </div>
 
 <br/>

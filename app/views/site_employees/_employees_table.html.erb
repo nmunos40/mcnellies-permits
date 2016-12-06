@@ -30,3 +30,4 @@
 		</tbody>
 	</table>
 </div>
+<%= will_paginate @site_employees unless @site_employees.manager.blank? ||  @site_employees.blank?  %> 
