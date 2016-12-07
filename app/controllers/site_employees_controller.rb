@@ -53,11 +53,12 @@ class SiteEmployeesController < ApplicationController
 		end
 	end
 
-	def import
-		params[:file]
-		redirect_to site_employees_path, notice: "Employees have been imported."
+	def import 
+			SiteEmployee.import(params[:file])
+			redirect_to site_employees_path
 	end
-	
+
+
 	private
 
 		def setup_site_employee

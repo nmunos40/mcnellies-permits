@@ -37,5 +37,4 @@ class Site < ActiveRecord::Base
 	    all
 	  end
 	end
-
 end

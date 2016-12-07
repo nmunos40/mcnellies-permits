@@ -1,0 +1,66 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Import List of Employees
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <h5>The Steps below will walk through how to import a list of employees. This process can be used to import new employees, or update a list of existing employees</h5> 
+          <ol>
+            <li>Download a copy of the "Employee Upload" template located here</li>
+            <li>Populate the template with customer data. If the list is <strong>only</strong> new employees, skip the next step</li>
+            <li>To update existing users be sure to populate the first column of the template with the employee ID. </li>
+            <li>Afer the template has been populated click on the "Browse" button below to find the excel or csv file</li>
+            <li>If the file name is showing next to the Browse button, click the "Import Button below"</li>
+            <li>Verrify the employees table has been updated with the data imported from the template</li>
+          </ol> 
+          <hr/>  
+          <%= form_tag import_site_employees_path, multipart: true do %>
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3"><%= file_field_tag :file%></div>
+            </div>   
+            <br/>
+            <div class="row">
+              <div class="col-md-3 col-sm-offset-4"><%= submit_tag "Import", class: "btn btn-info"%></div>             
+      	    </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Export Employee Data
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+
+      	Comming soon
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        	Export Employee Permits and Licenses 
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+
+      	Comming Soon
+
+      </div>
+    </div>
+  </div>
+</div>

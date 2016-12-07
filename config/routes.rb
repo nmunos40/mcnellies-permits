@@ -17,11 +17,13 @@ Rails.application.routes.draw do
   resources :users
   resources :site_permits
   resources :site_employees do 
-    collection {post :import}
+    collection { post :import}
   end
-  resources :sites
+  resources :sites 
   resource :sessions
   resource :password_reset
+ 
+  resource :reports
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'

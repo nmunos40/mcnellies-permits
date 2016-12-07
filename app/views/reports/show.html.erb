@@ -1,0 +1,34 @@
+<h2>Report Central</h2>
+<blockquote>
+  <p>A collection of Report and Import features</p>
+</blockquote>
+
+<hr/>
+<br/>
+
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#emp" aria-controls="emp" role="tab" data-toggle="tab">Employee Reports</a></li>
+    <li role="presentation"><a href="#site" aria-controls="site" role="tab" data-toggle="tab">Site Reports</a></li>
+    <li role="presentation"><a href="#permit" aria-controls="permit" role="tab" data-toggle="tab">Permit Reports</a></li>
+  </ul>
+<!-- Nav Content -->
+	<div class="tab-content">
+		<!-- Employee Reports-->
+	  <div role="tabpanel" class="tab-pane fade in active" id="emp">
+			<hr/>
+	  		<%= render partial: 'reports/employee_accord' %>
+	  </div>
+
+	  	<!-- Site Reports-->
+	  <div role="tabpanel" class="tab-pane fade" id="site">
+	  		<hr/>
+			Comming soon
+	  </div>
+
+	  	<!-- Permit Reports -->
+	  <div role="tabpanel" class="tab-pane fade" id="permit">
+	  		<hr/>
+			Comming Soon
+	  </div>
+	</div>
