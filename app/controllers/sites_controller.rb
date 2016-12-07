@@ -13,9 +13,9 @@ class SitesController < ApplicationController
 
 	def show
 		@site = Site.find(params[:id]) if params[:id]
-		@site_permits_red = @site.site_permits.less_than_thirty.order(sort_column + " " + sort_direction).paginate(per_page: 2, page:params[:red_page])
-		@site_permits_yellow = @site.site_permits.between_thirty_and_ninty.order(sort_column + " " + sort_direction).paginate(per_page: 2, page:params[:yellow_page])
-		@site_permits_green = @site.site_permits.greater_than_ninty.order(sort_column + " " + sort_direction).paginate(per_page: 2, page:params[:green_page])
+		@site_permits_red = @site.site_permits.less_than_thirty.order(sort_column + " " + sort_direction).paginate(per_page: 25, page:params[:red_page])
+		@site_permits_yellow = @site.site_permits.between_thirty_and_ninty.order(sort_column + " " + sort_direction).paginate(per_page: 25, page:params[:yellow_page])
+		@site_permits_green = @site.site_permits.greater_than_ninty.order(sort_column + " " + sort_direction).paginate(per_page: 25, page:params[:green_page])
 		@site_employees = @site.site_employees.manager!
 		@site_managers = @site.site_employees.manager
 		@small_employee_licenses = @site.get_emp_lic('small')
@@ -27,7 +27,7 @@ class SitesController < ApplicationController
 	end
 
 	def index
-		@sites = Site.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 2, page:params[:page])
+		@sites = Site.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 25, page:params[:page])
 	end
 
 	def create

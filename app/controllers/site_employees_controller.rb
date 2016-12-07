@@ -34,7 +34,7 @@ class SiteEmployeesController < ApplicationController
   	end
 
 	def index
-		@site_employees = SiteEmployee.order(sort_column + " " + sort_direction).paginate(per_page: 20, page:params[:page])
+		@site_employees = SiteEmployee.order(sort_column + " " + sort_direction).paginate(per_page: 25, page:params[:page])
 		@small_employee_licenses = @site_employees.emp_lic_small
 		@medium_employee_licenses = @site_employees.emp_lic_medium
 		@large_employee_licenses = @site_employees.emp_lic_large 
