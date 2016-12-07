@@ -15,7 +15,7 @@ class EmployeeLicensesController < ApplicationController
 
       if @employee_license.save
         flash[:success] =  "License was successfully added"
-        redirect_to site_employees_path 
+        redirect_to site_employee_path(@employee_license.site_employee) 
       else
         flash[:error] =  "Something Horrible has happened in the application. We are taking a look" 
       end
@@ -26,7 +26,7 @@ class EmployeeLicensesController < ApplicationController
 
       if @employee_license.update(employee_license_params)
         flash[:success] =  "License was successfully updated" 
-        redirect_to site_employees_path 
+        redirect_to site_employee_path(@employee_license.site_employee)  
       else
         flash[:error] =  "Something Horrible has happened in the application. We are taking a look" 
       end

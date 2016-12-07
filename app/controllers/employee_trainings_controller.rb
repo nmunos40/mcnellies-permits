@@ -13,7 +13,7 @@ class EmployeeTrainingsController < ApplicationController
 
       if @employee_training.save
         flash[:success] =  "Training Item was successfully added"
-        redirect_to root_url 
+        redirect_to site_employee_path(@employee_training.site_employee) 
       else
         flash[:error] =  "Something Horrible has happened in the application. We are taking a look" 
       end
@@ -22,7 +22,7 @@ class EmployeeTrainingsController < ApplicationController
   def update
       if @employee_training.update(employee_training_params)
         flash[:success] =  "Training Item was successfully updated" 
-        redirect_to root_url 
+        redirect_to site_employee_path(@employee_training.site_employee) 
       else
         flash[:error] =  "Something Horrible has happened in the application. We are taking a look" 
       end
@@ -32,7 +32,7 @@ class EmployeeTrainingsController < ApplicationController
   def destroy
     @employee_training.destroy
         flash[:success] =  "Training Itme was successfully removed" 
-        redirect_to root_url 
+        redirect_to site_employees_path 
   end
 
   private
